@@ -7,11 +7,11 @@
 <script type="text/javascript" src="js/laydate/laydate.js"></script>
 <%@ page import="java.util.List"%>
 <%@ page import="java.util.ArrayList"%>
-<%@ page import="com.yx.dao.Type"%>
-<%@ page import="com.yx.dao.Category"%>
-<%@ page import="com.yx.dao.CategoryAdd"%>
-<%@ page import="com.yx.dao.IndexDetail"%>
-<%@ page import="com.yx.dao.Department"%>
+<%@ page import="com.yx.domain.Type"%>
+<%@ page import="com.yx.domain.Category"%>
+<%@ page import="com.yx.domain.CategoryAdd"%>
+<%@ page import="com.yx.domain.IndexDetail"%>
+<%@ page import="com.yx.domain.Department"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <title>武汉亚洲心脏病医院</title>
 </head>

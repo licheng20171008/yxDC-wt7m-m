@@ -22,7 +22,7 @@ import org.apache.poi.xssf.usermodel.XSSFRow;
 import org.apache.poi.xssf.usermodel.XSSFSheet;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 
-import com.yx.dao.IndexDetail;
+import com.yx.domain.IndexDetail;
 
 public class FileReader {
 

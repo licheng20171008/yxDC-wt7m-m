@@ -9,7 +9,7 @@ import java.util.Map;
 
 import com.yx.DBConnect.DBConnect;
 import com.yx.DBConnect.DBOpration;
-import com.yx.dao.IndexDetail;
+import com.yx.domain.IndexDetail;
 
 public class FileHandle {
 

@@ -1,4 +1,4 @@
-package com.yx.dao;
+package com.yx.domain;
 
 import java.util.Date;
 

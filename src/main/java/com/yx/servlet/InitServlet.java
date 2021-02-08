@@ -10,11 +10,11 @@ import javax.servlet.http.HttpServletResponse;
 import com.yx.DBConnect.DBOpration;
 import com.yx.business.CategoryAddBusiness;
 import com.yx.business.CategoryAddInit;
-import com.yx.dao.Category;
-import com.yx.dao.CategoryAdd;
-import com.yx.dao.Department;
-import com.yx.dao.IndexDetail;
-import com.yx.dao.Type;
+import com.yx.domain.Category;
+import com.yx.domain.CategoryAdd;
+import com.yx.domain.Department;
+import com.yx.domain.IndexDetail;
+import com.yx.domain.Type;
 
 /**
  * 初始化添加页面

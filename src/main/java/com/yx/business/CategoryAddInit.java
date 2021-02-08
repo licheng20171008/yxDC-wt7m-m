@@ -6,9 +6,9 @@ import java.util.List;
 import java.util.Map;
 
 import com.yx.DBConnect.DBOpration;
-import com.yx.dao.Category;
-import com.yx.dao.CategoryAdd;
-import com.yx.dao.Type;
+import com.yx.domain.Category;
+import com.yx.domain.CategoryAdd;
+import com.yx.domain.Type;
 
 public class CategoryAddInit {
 

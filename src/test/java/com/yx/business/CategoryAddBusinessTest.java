@@ -1,6 +1,6 @@
 package com.yx.business;
 
-import com.yx.dao.CategoryAdd;
+import com.yx.domain.CategoryAdd;
 
 import junit.framework.Assert;
 import junit.framework.TestCase;

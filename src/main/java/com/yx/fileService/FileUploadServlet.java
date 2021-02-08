@@ -11,7 +11,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import com.yx.business.FileHandle;
 import com.yx.business.FileReader;
-import com.yx.dao.IndexDetail;
+import com.yx.domain.IndexDetail;
 
 public class FileUploadServlet extends HttpServlet {
 
