@@ -9,7 +9,7 @@
 <%@ page import="java.util.ArrayList"%>
 <%@ page import="com.yx.domain.Type"%>
 <%@ page import="com.yx.domain.Category"%>
-<%@ page import="com.yx.domain.CategoryAdd"%>
+<%@ page import="com.yx.dto.CategoryAdd"%>
 <%@ page import="com.yx.domain.Indexdetail"%>
 <%@ page import="com.yx.domain.Department"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>

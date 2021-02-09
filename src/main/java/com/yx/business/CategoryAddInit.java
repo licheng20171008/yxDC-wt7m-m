@@ -7,8 +7,8 @@ import java.util.Map;
 
 import com.yx.DBConnect.DBOpration;
 import com.yx.domain.Category;
-import com.yx.domain.CategoryAdd;
 import com.yx.domain.Type;
+import com.yx.dto.CategoryAdd;
 
 public class CategoryAddInit {
 

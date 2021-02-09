@@ -1,7 +1,12 @@
-package com.yx.domain;
+package com.yx.dto;
 
 import java.util.ArrayList;
 import java.util.List;
+
+import com.yx.domain.Category;
+import com.yx.domain.Department;
+import com.yx.domain.Indexdetail;
+import com.yx.domain.Type;
 
 /**
  * @author 李成

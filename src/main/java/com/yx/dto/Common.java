@@ -1,4 +1,4 @@
-package com.yx.domain;
+package com.yx.dto;
 
 import java.io.BufferedInputStream;
 import java.io.BufferedOutputStream;

@@ -11,10 +11,10 @@ import com.yx.DBConnect.DBOpration;
 import com.yx.business.CategoryAddBusiness;
 import com.yx.business.CategoryAddInit;
 import com.yx.domain.Category;
-import com.yx.domain.CategoryAdd;
 import com.yx.domain.Department;
 import com.yx.domain.Indexdetail;
 import com.yx.domain.Type;
+import com.yx.dto.CategoryAdd;
 
 /**
  * 初始化添加页面

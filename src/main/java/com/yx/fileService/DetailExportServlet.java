@@ -11,11 +11,11 @@ import javax.servlet.http.HttpServletResponse;
 
 import com.yx.DBConnect.DBOpration;
 import com.yx.domain.Category;
-import com.yx.domain.CategoryAdd;
-import com.yx.domain.Common;
 import com.yx.domain.Department;
 import com.yx.domain.Indexdetail;
 import com.yx.domain.Type;
+import com.yx.dto.CategoryAdd;
+import com.yx.dto.Common;
 import com.yx.servlet.RequestOperation;
 
 /**
