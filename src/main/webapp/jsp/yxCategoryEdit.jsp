@@ -10,13 +10,13 @@
 <%@ page import="com.yx.domain.Type"%>
 <%@ page import="com.yx.domain.Category"%>
 <%@ page import="com.yx.domain.CategoryAdd"%>
-<%@ page import="com.yx.domain.IndexDetail"%>
+<%@ page import="com.yx.domain.Indexdetail"%>
 <%@ page import="com.yx.domain.Department"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <title>武汉亚洲心脏病医院</title>
 </head>
 <%
-    CategoryAdd ca = (CategoryAdd) request.getAttribute("CategoryAdd");
+	CategoryAdd ca = (CategoryAdd) request.getAttribute("CategoryAdd");
     int perPage = 20;
     List<Category> catList = new ArrayList<Category>();
     if (ca.getCategoryList() == null) {
@@ -67,9 +67,9 @@
     int typeCurPage = ca.getTypeCurPage();
     int typeCountPage = ca.getTypeCountPage();
     
-    List<IndexDetail> idiList = new ArrayList<IndexDetail>();
+    List<Indexdetail> idiList = new ArrayList<Indexdetail>();
     if(ca.getIdList() == null){
-    	idiList = (List<IndexDetail>) session.getAttribute("idiList");
+    	idiList = (List<Indexdetail>) session.getAttribute("idiList");
     } else {
     	idiList = ca.getIdList();
         session.setAttribute("idiList", idiList);
@@ -110,7 +110,7 @@
     <hr id="line1" style="FILTER: alpha(opacity = 100, finishopacity = 0, style = 3)" width="100%" color="#987cb9" size="3" />
     <div id="catDIV">
             <span style="font-family: '宋体'; font-size: 19px;">一级指标名称：</span>
-            <input type="text" id="category" name="CategoryAdd.Category.categoryName" value="<%=ca.getCategory().getCategoryName() %>"/>
+            <input type="text" id="category" name="CategoryAdd.Category.categoryName" value="<%=ca.getCategory().getCategoryname() %>"/>
             <input type="hidden" id="categoryID" name="CategoryAdd.Category.id" value="<%=ca.getCategory().getId() %>"/>
      </div>
     <hr id="line2" style="FILTER: alpha(opacity = 100, finishopacity = 0, style = 3)" width="100%" color="#987cb9" size="3" />
@@ -123,7 +123,7 @@
 				</c:forEach>
 			</select>
 			<span style="font-family: '宋体'; font-size: 19px;">二级指标名称：</span>
-			<input type="text" id="typeName" name="CategoryAdd.Type.typeName" value="<%=ca.getType().getTypeName() %>"/>
+			<input type="text" id="typeName" name="CategoryAdd.Type.typeName" value="<%=ca.getType().getTypename() %>"/>
 			<input type="hidden" id="typeId" name="CategoryAdd.Type.id" value="<%=ca.getType().getId() %>"/>
         </div>
         <hr id="line3" style="FILTER: alpha(opacity = 100, finishopacity = 0, style = 3)" width="100%" color="#987cb9" size="3" />

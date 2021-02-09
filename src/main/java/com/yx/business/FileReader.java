@@ -22,7 +22,7 @@ import org.apache.poi.xssf.usermodel.XSSFRow;
 import org.apache.poi.xssf.usermodel.XSSFSheet;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 
-import com.yx.domain.IndexDetail;
+import com.yx.domain.Indexdetail;
 
 public class FileReader {
 
@@ -31,7 +31,7 @@ public class FileReader {
 	private String message = "";
 
 	// sheet数据集合
-	List<IndexDetail> idList = null;
+	List<Indexdetail> idList = null;
 
 	// 文件二进制输入流
 	private InputStream is = null;
@@ -148,7 +148,7 @@ public class FileReader {
 			// 根据currSheet值获得当前的SHEET
 			sheet = (XSSFSheet) workbook.getSheetAt(currSheet);
 
-			idList = new ArrayList<IndexDetail>();
+			idList = new ArrayList<Indexdetail>();
 
 			// 初始化当前SHEET位置
 			currPosition = 0;
@@ -177,7 +177,7 @@ public class FileReader {
 	// 函数getLine返回Sheet的一行数据
 	private void getXssfSheetLine(XSSFSheet sheet, int row) {
 
-		IndexDetail id = new IndexDetail();
+		Indexdetail id = new Indexdetail();
 		
 		// 根据行数取得sheet的一行
 		XSSFRow rowline = sheet.getRow(row);

@@ -4,7 +4,7 @@ import com.yx.DBConnect.DBOpration;
 import com.yx.domain.Category;
 import com.yx.domain.CategoryAdd;
 import com.yx.domain.Department;
-import com.yx.domain.IndexDetail;
+import com.yx.domain.Indexdetail;
 import com.yx.domain.Type;
 
 public class CategoryAddBusiness {
@@ -16,7 +16,7 @@ public class CategoryAddBusiness {
 		if ("0".equals(businessKey)){
 			Category cat = new Category();
 			cat = ca.getCategory();
-			if (cat.getCategoryName().isEmpty()){
+			if (cat.getCategoryname().isEmpty()){
 				message = "请填写一级指标名称！！";
 			} else {
 				if (dbo.excuteSQL(dbo.objInsertSql(cat))){
@@ -28,7 +28,7 @@ public class CategoryAddBusiness {
 		} else if ("1".equals(businessKey)) {
 			Type type = new Type();
 			type = ca.getType();
-			if (type.getTypeName().isEmpty()){
+			if (type.getTypename().isEmpty()){
 				message = "请填写二级指标名称！！";
 			} else {
 				if (dbo.excuteSQL(dbo.objInsertSql(type))){
@@ -38,7 +38,7 @@ public class CategoryAddBusiness {
 				}
 			}
 		} else if ("2".equals(businessKey)) {
-			IndexDetail id = new IndexDetail();
+			Indexdetail id = new Indexdetail();
 			id = ca.getIndexDetail();
 			if (id.getIndexName().isEmpty()){
 				message = "请填写指标名称！！";

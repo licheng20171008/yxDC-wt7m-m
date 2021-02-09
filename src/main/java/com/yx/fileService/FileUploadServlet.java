@@ -11,7 +11,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import com.yx.business.FileHandle;
 import com.yx.business.FileReader;
-import com.yx.domain.IndexDetail;
+import com.yx.domain.Indexdetail;
 
 public class FileUploadServlet extends HttpServlet {
 
@@ -41,10 +41,10 @@ public class FileUploadServlet extends HttpServlet {
 				message = "";
 			}
 			if(message.isEmpty()){
-				message = new FileHandle().checkFile((List<IndexDetail>)frMap.get("data"));
+				message = new FileHandle().checkFile((List<Indexdetail>)frMap.get("data"));
 			}
 			if(message.isEmpty()){
-				message = new FileHandle().excute((List<IndexDetail>)frMap.get("data"));
+				message = new FileHandle().excute((List<Indexdetail>)frMap.get("data"));
 			}
 		}
 		request.setAttribute("message", message);

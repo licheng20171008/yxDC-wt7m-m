@@ -10,7 +10,7 @@ import com.yx.domain.Category;
 import com.yx.domain.CategoryAdd;
 import com.yx.domain.Common;
 import com.yx.domain.Department;
-import com.yx.domain.IndexDetail;
+import com.yx.domain.Indexdetail;
 import com.yx.domain.Type;
 
 public class CategoryEditBusiness {
@@ -96,7 +96,7 @@ public class CategoryEditBusiness {
 			List<Category> catListTemp = new ArrayList<Category>();
 			Category cat = new Category();
 			cat = ca.getCategory();
-			String categoryName = cat.getCategoryName();
+			String categoryName = cat.getCategoryname();
 			int catid = cat.getId();
 			if (!categoryName.isEmpty()){
 				map.put("categoryName", categoryName);
@@ -164,7 +164,7 @@ public class CategoryEditBusiness {
 			List<Type> typeListTemp = new ArrayList<Type>();
 			Type type = new Type();
 			type = ca.getType();
-			String typeName = type.getTypeName();
+			String typeName = type.getTypename();
 			int typeid = type.getId();
 			map.put("typeName", typeName);
 			if (!typeName.isEmpty()){
@@ -227,9 +227,9 @@ public class CategoryEditBusiness {
 			}
 			ca.setTypeViewList(typeList);
 		} else if ("3".equals(businessKey)) {
-			List<IndexDetail> idList = new ArrayList<IndexDetail>();
-			List<IndexDetail> idListTemp = new ArrayList<IndexDetail>();
-			IndexDetail id = new IndexDetail();
+			List<Indexdetail> idList = new ArrayList<Indexdetail>();
+			List<Indexdetail> idListTemp = new ArrayList<Indexdetail>();
+			Indexdetail id = new Indexdetail();
 			id = ca.getIndexDetail();
 			String category_detail = id.getCategory_detail();
 			String type_detail = id.getType_detail();
@@ -306,9 +306,9 @@ public class CategoryEditBusiness {
 					}
 				}
 			}
-			objListTemp = dbo.excuteSQL(sql, IndexDetail.class);
+			objListTemp = dbo.excuteSQL(sql, Indexdetail.class);
 			for(Object obj0 : objListTemp){
-				idListTemp.add((IndexDetail) obj0);
+				idListTemp.add((Indexdetail) obj0);
 			}
 			ca.setIdCount(idListTemp.size());
 			if (idListTemp.size()%20 == 0){
@@ -317,9 +317,9 @@ public class CategoryEditBusiness {
 				ca.setIdCountPage(idListTemp.size()/20 + 1);
 			}
 			sql = sql +" limit " + (ca.getIdCurPage() - 1)*20 + ", " + ca.getIdCurPage()*20;
-			objList = dbo.excuteSQL(sql, IndexDetail.class);
+			objList = dbo.excuteSQL(sql, Indexdetail.class);
 			for(Object obj : objList){
-				idList.add((IndexDetail) obj);
+				idList.add((Indexdetail) obj);
 			}
 			ca.setIdList(idList);
 		}

@@ -13,7 +13,7 @@ import com.yx.business.CategoryAddInit;
 import com.yx.domain.Category;
 import com.yx.domain.CategoryAdd;
 import com.yx.domain.Department;
-import com.yx.domain.IndexDetail;
+import com.yx.domain.Indexdetail;
 import com.yx.domain.Type;
 
 /**
@@ -55,7 +55,7 @@ public class InitServlet extends HttpServlet {
 				afp.setType((Type) dbo.InitBean(Type.class));
 
 				// 指标标准表单
-				afp.setIndexDetail((IndexDetail) dbo.InitBean(IndexDetail.class));
+				afp.setIndexDetail((Indexdetail) dbo.InitBean(Indexdetail.class));
 			}else if ("1".equals(businessKey)) {
 				// 部门
 				afp.setDepartment((Department) dbo.InitBean(Department.class));
@@ -64,7 +64,7 @@ public class InitServlet extends HttpServlet {
 				afp.setCategory((Category) dbo.InitBean(Category.class));
 				
 				// 指标标准表单
-				afp.setIndexDetail((IndexDetail) dbo.InitBean(IndexDetail.class));
+				afp.setIndexDetail((Indexdetail) dbo.InitBean(Indexdetail.class));
 			}else if ("2".equals(businessKey)) {
 				// 部门
 				afp.setDepartment((Department) dbo.InitBean(Department.class));
@@ -82,7 +82,7 @@ public class InitServlet extends HttpServlet {
 				afp.setType((Type) dbo.InitBean(Type.class));
 
 				// 指标标准表单
-				afp.setIndexDetail((IndexDetail) dbo.InitBean(IndexDetail.class));
+				afp.setIndexDetail((Indexdetail) dbo.InitBean(Indexdetail.class));
 			}
 			if ("0".equals(afp.getCategory_detailHidden())){
 				afp.setMessage(cab.excute(afp));
@@ -110,7 +110,7 @@ public class InitServlet extends HttpServlet {
 			afp.setType((Type) dbo.InitBean(Type.class));
 			
 			// 指标标准表单
-			afp.setIndexDetail((IndexDetail) dbo.InitBean(IndexDetail.class));
+			afp.setIndexDetail((Indexdetail) dbo.InitBean(Indexdetail.class));
 			request.setAttribute("CategoryAdd", afp);
 			request.getRequestDispatcher("/jsp/yxCategoryAdd.jsp").forward(request, response);
 		}

@@ -9,15 +9,15 @@ import java.util.Map;
 
 import com.yx.DBConnect.DBConnect;
 import com.yx.DBConnect.DBOpration;
-import com.yx.domain.IndexDetail;
+import com.yx.domain.Indexdetail;
 
 public class FileHandle {
 
-	public String checkFile(List<IndexDetail> idList) {
+	public String checkFile(List<Indexdetail> idList) {
 		String message = "";
 
 		// 数据检证
-		for (IndexDetail id : idList) {
+		for (Indexdetail id : idList) {
 
 			// 行数
 			int index = id.getId();
@@ -63,7 +63,7 @@ public class FileHandle {
 		return message;
 	}
 
-	public String excute(List<IndexDetail> idList) {
+	public String excute(List<Indexdetail> idList) {
 
 		DBOpration dbo = new DBOpration();
 		Connection conn = DBConnect.getConn();
@@ -72,7 +72,7 @@ public class FileHandle {
 		int index = dbo.excuteID(dbo.tableforAll("indexdetail"));
 		try {
 			pstmt = conn.prepareStatement(sql);
-			for (IndexDetail id : idList) {
+			for (Indexdetail id : idList) {
 				pstmt.setInt(1, index);
 				pstmt.setString(2, dbo.nameToCode("categoryName", id.getCategory_detail(), "category"));
 				pstmt.setString(3, dbo.nameToCode("typeName", id.getType_detail(), "type"));

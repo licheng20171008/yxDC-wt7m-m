@@ -3,50 +3,40 @@ package com.yx.domain;
 import java.util.Date;
 
 /**
- * @author 李成
- * @version 1.0
- * 一级分类指标
- * */
+ * 
+ * 
+ * @author licheng
+ * 
+ * @date 2021-02-08
+ */
 public class Category {
+    private Integer id;
 
-	// 一级分类ID
-	private int id;
-	
-	// 一级分类名称
-	private String categoryName;
-	
-	// 冻结时间
-	private Date abateTime;
-	
-	public Category(){}
-	
-	// 取得一级分类ID
-	public int getId() {
-		return id;
-	}
-	
-	// 设置一级分类ID
-	public void setId(int id) {
-		this.id = id;
-	}
-	
-	// 取得一级分类名称
-	public String getCategoryName() {
-		return categoryName;
-	}
-	
-	//设置一级分类名称
-	public void setCategoryName(String categoryName) {
-		this.categoryName = categoryName;
-	}
+    private String categoryname;
 
-	// 取得冻结时间
-	public Date getAbateTime() {
-		return abateTime;
-	}
+    private Date abatetime;
 
-	//设置冻结时间
-	public void setAbateTime(Date abateTime) {
-		this.abateTime = abateTime;
-	}
+    public Integer getId() {
+        return id;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
+    }
+
+    public String getCategoryname() {
+        return categoryname;
+    }
+
+    public void setCategoryname(String categoryname) {
+        this.categoryname = categoryname == null ? null : categoryname.trim();
+    }
+
+    public Date getAbatetime() {
+        return abatetime;
+    }
+
+    public void setAbatetime(Date abatetime) {
+        this.abatetime = abatetime;
+    }
 }

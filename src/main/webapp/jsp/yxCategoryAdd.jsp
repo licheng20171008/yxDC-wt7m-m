@@ -10,7 +10,7 @@
 <%@ page import="com.yx.domain.Type"%>
 <%@ page import="com.yx.domain.Category"%>
 <%@ page import="com.yx.domain.CategoryAdd"%>
-<%@ page import="com.yx.domain.IndexDetail"%>
+<%@ page import="com.yx.domain.Indexdetail"%>
 <%@ page import="com.yx.domain.Department"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <title>武汉亚洲心脏病医院</title>
@@ -29,10 +29,10 @@
 		typeList = (List<Type>) session.getAttribute("typeList");
 	} else {
 		if ("0".equals(ca.getCategory_detailHidden())) {
-			typeList = new ArrayList<Type>();
+	typeList = new ArrayList<Type>();
 		} else {
-			typeList = ca.getTypeList();
-			session.setAttribute("typeList", typeList);
+	typeList = ca.getTypeList();
+	session.setAttribute("typeList", typeList);
 		}
 	}
 	if (ca.getCategory() == null) {
@@ -42,14 +42,14 @@
 		ca.setType(new Type());
 	}
 	if (ca.getIndexDetail() == null) {
-		ca.setIndexDetail(new IndexDetail());
+		ca.setIndexDetail(new Indexdetail());
 	}
 	if (ca.getDepartment() == null) {
         ca.setDepartment(new Department());
     }
 	String businessKey = ca.getBusinessKey();
 	String message = ca.getMessage();
-	String category_type = ca.getType().getCategory_type();
+	String category_type = ca.getType().getCategoryType();
 	String category_detail = ca.getIndexDetail().getCategory_detail();
 	String type_detail = ca.getIndexDetail().getType_detail();
 	String indexDetail = ca.getIndexDetail().getIndexDetail();
@@ -95,7 +95,7 @@
 						<label for="CategoryAdd.Category.categoryName">一级分类名称：</label>
 					</div>
 					<div class="field-widget">
-						<input type="text" id="category" name="CategoryAdd.Category.categoryName" class="required" value="<%=ca.getCategory().getCategoryName()%>" />
+						<input type="text" id="category" name="CategoryAdd.Category.categoryName" class="required" value="<%=ca.getCategory().getCategoryname()%>" />
 					</div>
 				</div>
 			</fieldset>
@@ -118,7 +118,7 @@
 						<label for="CategoryAdd.Type.typeName">二级分类名称：</label>
 					</div>
 					<div class="field-widget">
-						<input type="text" id="typeName" name="CategoryAdd.Type.typeName" class="required" value="<%=ca.getType().getTypeName()%>" />
+						<input type="text" id="typeName" name="CategoryAdd.Type.typeName" class="required" value="<%=ca.getType().getTypename()%>" />
 					</div>
 				</div>
 			</fieldset>

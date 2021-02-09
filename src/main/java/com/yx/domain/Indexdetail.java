@@ -7,7 +7,7 @@ import java.util.Date;
  * @version 1.0
  * 指标标准表单
  * */
-public class IndexDetail {
+public class Indexdetail {
 
 	// 指标ID
 	private int id;
@@ -45,7 +45,7 @@ public class IndexDetail {
 	// 冻结时间
 	private Date abateTime;
 		
-	public IndexDetail(){};
+	public Indexdetail(){};
 	
 	// 取得指标ID
 	public int getId() {

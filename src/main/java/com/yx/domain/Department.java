@@ -2,46 +2,41 @@ package com.yx.domain;
 
 import java.util.Date;
 
+/**
+ * 
+ * 
+ * @author licheng
+ * 
+ * @date 2021-02-08
+ */
 public class Department {
+    private Integer id;
 
-	// 部门ID
-	private int id;
-	
-	// 部门名称
-	private String name;
-	
-	// 冻结时间
-	private Date abateTime;
-		
-	public Department(){}
-	
-	// 取得部门ID
-	public int getId() {
-		return id;
-	}
-	
-	// 设置部门ID
-	public void setId(int id) {
-		this.id = id;
-	}
-	
-	// 取得部门名称
-	public String getName() {
-		return name;
-	}
-	
-	// 设置部门名称
-	public void setName(String name) {
-		this.name = name;
-	}
-	
-	// 取得冻结时间
-	public Date getAbateTime() {
-		return abateTime;
-	}
+    private String name;
 
-	// 设置冻结时间
-	public void setAbateTime(Date abateTime) {
-		this.abateTime = abateTime;
-	}
+    private Date abatetime;
+
+    public Integer getId() {
+        return id;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name == null ? null : name.trim();
+    }
+
+    public Date getAbatetime() {
+        return abatetime;
+    }
+
+    public void setAbatetime(Date abatetime) {
+        this.abatetime = abatetime;
+    }
 }

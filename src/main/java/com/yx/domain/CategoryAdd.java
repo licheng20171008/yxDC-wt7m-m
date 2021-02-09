@@ -49,10 +49,10 @@ public class CategoryAdd {
 	private int typeCountPage;
 
 	// 指标标准表单
-	private IndexDetail indexDetail;
+	private Indexdetail indexDetail;
 	
 	// 指标标准表单集合
-	private List<IndexDetail> idList = new ArrayList<IndexDetail>();
+	private List<Indexdetail> idList = new ArrayList<Indexdetail>();
 	
 	// 指标条数
 	private int idCount;
@@ -111,12 +111,12 @@ public class CategoryAdd {
 	}
 
 	// 取得指标标准表单
-	public IndexDetail getIndexDetail() {
+	public Indexdetail getIndexDetail() {
 		return indexDetail;
 	}
 
 	// 设置指标标准表单
-	public void setIndexDetail(IndexDetail indexDetail) {
+	public void setIndexDetail(Indexdetail indexDetail) {
 		this.indexDetail = indexDetail;
 	}
 
@@ -191,12 +191,12 @@ public class CategoryAdd {
 	}
 
 	// 取得指标标准表单集合
-	public List<IndexDetail> getIdList() {
+	public List<Indexdetail> getIdList() {
 		return idList;
 	}
 
 	// 设置指标标准表单集合
-	public void setIdList(List<IndexDetail> idList) {
+	public void setIdList(List<Indexdetail> idList) {
 		this.idList = idList;
 	}
 

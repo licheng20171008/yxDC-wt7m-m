@@ -14,7 +14,7 @@ import com.yx.domain.Category;
 import com.yx.domain.CategoryAdd;
 import com.yx.domain.Common;
 import com.yx.domain.Department;
-import com.yx.domain.IndexDetail;
+import com.yx.domain.Indexdetail;
 import com.yx.domain.Type;
 import com.yx.servlet.RequestOperation;
 
@@ -57,7 +57,7 @@ public class DetailExportServlet extends HttpServlet {
 		if ("0".equals(businessKey)) {
 			afp.setCategory(new Category());
 			afp.setType(new Type());
-			afp.setIndexDetail(new IndexDetail());
+			afp.setIndexDetail(new Indexdetail());
 			sql = dbo.javaBeanSQL(afp.getDepartment(), afp.getSelectBox());
 			fileTitle = "部门基本信息" + sysDate;
 			objList = dbo.excuteSQL(sql, Department.class);
@@ -68,7 +68,7 @@ public class DetailExportServlet extends HttpServlet {
 		} else if ("1".equals(businessKey)) {
 			afp.setDepartment(new Department());
 			afp.setType(new Type());
-			afp.setIndexDetail(new IndexDetail());
+			afp.setIndexDetail(new Indexdetail());
 			sql = dbo.javaBeanSQL(afp.getCategory(), afp.getSelectBox());
 			fileTitle = "一级分类信息" + sysDate;
 			objList = dbo.excuteSQL(sql, Category.class);
@@ -79,7 +79,7 @@ public class DetailExportServlet extends HttpServlet {
 		} else if ("2".equals(businessKey)) {
 			afp.setDepartment(new Department());
 			afp.setCategory(new Category());
-			afp.setIndexDetail(new IndexDetail());
+			afp.setIndexDetail(new Indexdetail());
 			sql = dbo.javaBeanSQL(afp.getType(), afp.getSelectBox());
 			fileTitle = "二级分类信息" + sysDate;
 			objList = dbo.excuteSQL(sql, Type.class);
@@ -94,7 +94,7 @@ public class DetailExportServlet extends HttpServlet {
 			afp.setType(new Type());
 			sql = dbo.javaBeanSQL(afp.getIndexDetail(), afp.getSelectBox());
 			fileTitle = "指标明细信息" + sysDate;
-			objList = dbo.excuteSQL(sql, IndexDetail.class);
+			objList = dbo.excuteSQL(sql, Indexdetail.class);
 			itemArray = new String[12];
 			itemArray[0] = "指标ID";
 			itemArray[1] = "一级分类ID";
