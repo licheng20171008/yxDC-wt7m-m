@@ -5,21 +5,31 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import org.apache.ibatis.session.SqlSession;
+
 import com.yx.DBConnect.DBOpration;
+import com.yx.dao.CategoryExample;
+import com.yx.dao.CategoryExample.Criteria;
+import com.yx.dao.DBConnect;
 import com.yx.domain.Category;
 import com.yx.domain.Type;
 import com.yx.dto.CategoryAdd;
 
-public class CategoryAddInit {
+public class CategoryAddInit extends DBConnect {
 
 	public CategoryAdd excuteInit(CategoryAdd ca){
 		
+		SqlSession ss = this.ssf.openSession();
+		CategoryExample cge = new CategoryExample();
+		Criteria c = cge.createCriteria();
+		c.andAbatetimeIsNull();
+		List<Object> resultList = ss.selectList("com.yx.mapper.CategoryMapper.selectByExample", cge);
 		DBOpration dbo = new DBOpration();
 		// 一级指标的读取
-		String categorySql = dbo.tableforAll("category");
-		categorySql = categorySql + " where abateTime is null";
+		//String categorySql = dbo.tableforAll("category");
+		//categorySql = categorySql + " where abateTime is null";
 		List<Category> catList = new ArrayList<Category>();
-		List<Object> resultList = dbo.excuteSQL(categorySql, Category.class);
+		//List<Object> resultList = dbo.excuteSQL(categorySql, Category.class);
 		for (int i = 0; i < resultList.size(); i++){
 			catList.add((Category) resultList.get(i));
 		}

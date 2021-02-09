@@ -1,28 +1,35 @@
 package com.yx.dao;
 
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.sql.Statement;
+import java.io.IOException;
+import java.io.InputStream;
+
+import org.apache.ibatis.io.Resources;
+import org.apache.ibatis.session.SqlSessionFactory;
+import org.apache.ibatis.session.SqlSessionFactoryBuilder;
 
 public class DBConnect {
-    private static final String url = "jdbc:mysql://localhost:3306/yxdc?user=root&password=root&useUnicode=true&characterEncoding=UTF8&useSSL=false&serverTimezone=UTC";
-//    private static final String url = "jdbc:mysql://88.88.87.59:3306/indexlibrary?user=root&password=root&useUnicode=true&characterEncoding=UTF8&useSSL=true";
-    private static final String name = "com.mysql.jdbc.Driver";
-    private static  Connection conn = null;
-    private static Statement stmt = null;
-    private static ResultSet rs = null;
+	public SqlSessionFactory ssf  = null;
 
-    public static Connection getConn(){
-    	try {
-			Class.forName(name);
-			conn = DriverManager.getConnection(url);
-		} catch (ClassNotFoundException e) {
+    public DBConnect(){
+
+		InputStream is = null;
+		try {
+			// 获取路径
+			String resource = "mybatis-config.xml";
+
+			// 获取信息流
+			is = Resources.getResourceAsStream(resource);
+
+			// 创建会话工厂
+			ssf = new SqlSessionFactoryBuilder().build(is);
+		} catch (Exception e) {
 			e.printStackTrace();
-		} catch (SQLException e) {
-			e.printStackTrace();
+		}finally {
+			try {
+				is.close();
+			} catch (IOException e) {
+				e.printStackTrace();
+			}
 		}
-		return conn;
-    }
+	}
 }
