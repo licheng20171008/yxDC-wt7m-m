@@ -1,7 +1,6 @@
 package com.yx.mapper;
 
 import com.yx.domain.Indexdetail;
-import com.yx.dao.IndexdetailExample;
 import java.util.List;
 import org.apache.ibatis.annotations.Param;
 

@@ -3,7 +3,6 @@ package com.yx.mapper;
 import java.util.List;
 import org.apache.ibatis.annotations.Param;
 
-import com.yx.dao.CategoryExample;
 import com.yx.domain.Category;
 
 public interface CategoryMapper {

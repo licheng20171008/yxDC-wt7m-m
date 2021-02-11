@@ -2,7 +2,7 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
 <mapper namespace="com.yx.mapper.DepartmentMapper" >
 
-    <resultMap id="BaseResultMap" type="com.yx.po.Department" >
+    <resultMap id="BaseResultMap" type="com.yx.domain.Department" >
         <id column="id" property="id" jdbcType="INTEGER" />
         <result column="name" property="name" jdbcType="VARCHAR" />
         <result column="abateTime" property="abatetime" jdbcType="DATE" />
@@ -72,7 +72,7 @@
         id, name, abateTime
     </sql>
 
-    <select id="selectByExample" resultMap="BaseResultMap" parameterType="com.yx.po.DepartmentExample" >
+    <select id="selectByExample" resultMap="BaseResultMap" parameterType="com.yx.mapper.DepartmentExample" >
         select
         <if test="distinct" >
             distinct
@@ -99,21 +99,21 @@
         where id = #{id,jdbcType=INTEGER}
     </delete>
 
-    <delete id="deleteByExample" parameterType="com.yx.po.DepartmentExample" >
+    <delete id="deleteByExample" parameterType="com.yx.mapper.DepartmentExample" >
         delete from department
         <if test="_parameter != null" >
             <include refid="Example_Where_Clause" />
         </if>
     </delete>
 
-    <insert id="insert" parameterType="com.yx.po.Department" >
+    <insert id="insert" parameterType="com.yx.domain.Department" >
         insert into department (id, name, abateTime
             )
         values (#{id,jdbcType=INTEGER}, #{name,jdbcType=VARCHAR}, #{abatetime,jdbcType=DATE}
             )
     </insert>
 
-    <insert id="insertSelective" parameterType="com.yx.po.Department" >
+    <insert id="insertSelective" parameterType="com.yx.domain.Department" >
         insert into department
         <trim prefix="(" suffix=")" suffixOverrides="," >
             <if test="id != null" >
@@ -139,7 +139,7 @@
         </trim>
     </insert>
 
-    <select id="countByExample" parameterType="com.yx.po.DepartmentExample" resultType="java.lang.Integer" >
+    <select id="countByExample" parameterType="com.yx.mapper.DepartmentExample" resultType="java.lang.Integer" >
         select count(*) from department
         <if test="_parameter != null" >
             <include refid="Example_Where_Clause" />
@@ -174,7 +174,7 @@
         </if>
     </update>
 
-    <update id="updateByPrimaryKeySelective" parameterType="com.yx.po.Department" >
+    <update id="updateByPrimaryKeySelective" parameterType="com.yx.domain.Department" >
         update department
         <set >
             <if test="name != null" >
@@ -187,7 +187,7 @@
         where id = #{id,jdbcType=INTEGER}
     </update>
 
-    <update id="updateByPrimaryKey" parameterType="com.yx.po.Department" >
+    <update id="updateByPrimaryKey" parameterType="com.yx.domain.Department" >
         update department
         set name = #{name,jdbcType=VARCHAR},
             abateTime = #{abatetime,jdbcType=DATE}

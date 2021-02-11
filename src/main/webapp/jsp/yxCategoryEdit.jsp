@@ -110,7 +110,7 @@
     <hr id="line1" style="FILTER: alpha(opacity = 100, finishopacity = 0, style = 3)" width="100%" color="#987cb9" size="3" />
     <div id="catDIV">
             <span style="font-family: '宋体'; font-size: 19px;">一级指标名称：</span>
-            <input type="text" id="category" name="CategoryAdd.Category.categoryName" value="<%=ca.getCategory().getCategoryname() %>"/>
+            <input type="text" id="category" name="CategoryAdd.Category.categoryname" value="<%=ca.getCategory().getCategoryname() %>"/>
             <input type="hidden" id="categoryID" name="CategoryAdd.Category.id" value="<%=ca.getCategory().getId() %>"/>
      </div>
     <hr id="line2" style="FILTER: alpha(opacity = 100, finishopacity = 0, style = 3)" width="100%" color="#987cb9" size="3" />
@@ -119,11 +119,11 @@
             <select id="category_type" name="CategoryAdd.Type.category_type" style="font-family: '宋体'; font-size: 19px;" >
 				<option style="width: 400px; font-family: '宋体'; font-size: 19px;" value="">--请选择一级指标--</option>
 				<c:forEach var="cat" items="${catList }">
-					<option style="width: 400px; font-family: '宋体'; font-size: 19px;" value="${ cat.id}">${ cat.categoryName}</option>
+					<option style="width: 400px; font-family: '宋体'; font-size: 19px;" value="${ cat.id}">${ cat.categoryname}</option>
 				</c:forEach>
 			</select>
 			<span style="font-family: '宋体'; font-size: 19px;">二级指标名称：</span>
-			<input type="text" id="typeName" name="CategoryAdd.Type.typeName" value="<%=ca.getType().getTypename() %>"/>
+			<input type="text" id="typeName" name="CategoryAdd.Type.typename" value="<%=ca.getType().getTypename() %>"/>
 			<input type="hidden" id="typeId" name="CategoryAdd.Type.id" value="<%=ca.getType().getId() %>"/>
         </div>
         <hr id="line3" style="FILTER: alpha(opacity = 100, finishopacity = 0, style = 3)" width="100%" color="#987cb9" size="3" />
@@ -135,7 +135,7 @@
                         <select id="category_detail" name="CategoryAdd.IndexDetail.category_detail" style="font-family: '宋体'; font-size: 19px;" onchange="changeValue(1);">
                             <option style="width: 400px; font-family: '宋体'; font-size: 19px;" value="">--请选择一级指标--</option>
                             <c:forEach var="cat" items="${catList }">
-                                <option style="width: 400px; font-family: '宋体'; font-size: 19px;" value="${ cat.id}">${ cat.categoryName}</option>
+                                <option style="width: 400px; font-family: '宋体'; font-size: 19px;" value="${ cat.id}">${ cat.categoryname}</option>
                             </c:forEach>
                         </select>
                     </td>
@@ -144,7 +144,7 @@
                         <select id="type_detail" name="CategoryAdd.IndexDetail.type_detail" style="font-family: '宋体'; font-size: 19px;">
                             <option style="width: 400px; font-family: '宋体'; font-size: 19px;" value="">--请选择二级指标--</option>
                             <c:forEach var="type" items="${typeList }">
-                                <option style="width: 400px; font-family: '宋体'; font-size: 19px;" value="${ type.id}">${ type.typeName}</option>
+                                <option style="width: 400px; font-family: '宋体'; font-size: 19px;" value="${ type.id}">${ type.typename}</option>
                             </c:forEach>
                         </select>
                     </td>
@@ -254,7 +254,7 @@
             <c:forEach var="catView" items="${catViewList }">
                 <tr>
                     <td>${catView.id }</td>
-                    <td>${catView.categoryName }</td>
+                    <td>${catView.categoryname }</td>
                     <td>${catView.abateTime }</td>
                     <td align="center">
                         <input type="button" onclick="catChange(this)" value="修改" /> 
@@ -296,7 +296,7 @@
             <c:forEach var="typeView" items="${typeViewList }">
                 <tr>
                     <td>${typeView.id }</td>
-                    <td>${typeView.typeName }</td>
+                    <td>${typeView.typename }</td>
                     <td>${typeView.category_type }</td>
                     <td>${typeView.abateTime }</td>
                     <td align="center">

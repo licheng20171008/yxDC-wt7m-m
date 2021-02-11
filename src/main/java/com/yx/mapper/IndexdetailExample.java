@@ -1,4 +1,4 @@
-package com.yx.dao;
+package com.yx.mapper;
 
 import java.util.ArrayList;
 import java.util.Date;

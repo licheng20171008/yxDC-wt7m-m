@@ -1,4 +1,4 @@
-package com.yx.dao;
+package com.yx.mapper;
 
 import java.io.IOException;
 import java.io.InputStream;

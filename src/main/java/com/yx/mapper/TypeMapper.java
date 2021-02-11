@@ -1,7 +1,6 @@
 package com.yx.mapper;
 
 import com.yx.domain.Type;
-import com.yx.dao.TypeExample;
 import java.util.List;
 import org.apache.ibatis.annotations.Param;
 

@@ -92,10 +92,10 @@
 				<legend>一级分类</legend>
 				<div class="form-row">
 					<div class="field-label">
-						<label for="CategoryAdd.Category.categoryName">一级分类名称：</label>
+						<label for="CategoryAdd.Category.categoryname">一级分类名称：</label>
 					</div>
 					<div class="field-widget">
-						<input type="text" id="category" name="CategoryAdd.Category.categoryName" class="required" value="<%=ca.getCategory().getCategoryname()%>" />
+						<input type="text" id="category" name="CategoryAdd.Category.categoryname" class="required" value="<%=ca.getCategory().getCategoryname()%>" />
 					</div>
 				</div>
 			</fieldset>
@@ -108,17 +108,17 @@
 					<div class="field-widget">
 						<select id="category_type" name="CategoryAdd.Type.category_type" class="validate-selection">
 							<c:forEach var="cat" items="${catList}">
-								<option style="width: 400px; font-family: '宋体'; font-size: 19px;" value="${cat.id}">${cat.categoryName}</option>
+								<option style="width: 400px; font-family: '宋体'; font-size: 19px;" value="${cat.id}">${cat.categoryname}</option>
 							</c:forEach>
 						</select>
 					</div>
 				</div>
 				<div class="form-row">
 					<div class="field-label">
-						<label for="CategoryAdd.Type.typeName">二级分类名称：</label>
+						<label for="CategoryAdd.Type.typename">二级分类名称：</label>
 					</div>
 					<div class="field-widget">
-						<input type="text" id="typeName" name="CategoryAdd.Type.typeName" class="required" value="<%=ca.getType().getTypename()%>" />
+						<input type="text" id="typeName" name="CategoryAdd.Type.typename" class="required" value="<%=ca.getType().getTypename()%>" />
 					</div>
 				</div>
 			</fieldset>
@@ -132,7 +132,7 @@
 						<select id="category_detail" name="CategoryAdd.IndexDetail.category_detail" class="validate-selection" onchange="changeValue(1);">
 							<option style="width: 400px; font-family: '宋体'; font-size: 19px;" value="">--请选择一级分类--</option>
 							<c:forEach var="cat" items="${catList }">
-								<option style="width: 400px; font-family: '宋体'; font-size: 19px;" value="${ cat.id}">${ cat.categoryName}</option>
+								<option style="width: 400px; font-family: '宋体'; font-size: 19px;" value="${ cat.id}">${ cat.categoryname}</option>
 							</c:forEach>
 						</select>
 					</div>
@@ -145,7 +145,7 @@
 						<select id="type_detail" name="CategoryAdd.IndexDetail.type_detail" class="validate-selection">
 							<option style="width: 400px; font-family: '宋体'; font-size: 19px;" value="">--请选择二级分类--</option>
 							<c:forEach var="type" items="${typeList }">
-								<option style="width: 400px; font-family: '宋体'; font-size: 19px;" value="${ type.id}">${ type.typeName}</option>
+								<option style="width: 400px; font-family: '宋体'; font-size: 19px;" value="${ type.id}">${ type.typename}</option>
 							</c:forEach>
 						</select>
 					</div>

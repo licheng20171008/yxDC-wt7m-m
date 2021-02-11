@@ -8,12 +8,13 @@ import java.util.Map;
 import org.apache.ibatis.session.SqlSession;
 
 import com.yx.DBConnect.DBOpration;
-import com.yx.dao.CategoryExample;
-import com.yx.dao.CategoryExample.Criteria;
-import com.yx.dao.DBConnect;
 import com.yx.domain.Category;
 import com.yx.domain.Type;
 import com.yx.dto.CategoryAdd;
+import com.yx.mapper.CategoryExample;
+import com.yx.mapper.CategoryExample.Criteria;
+import com.yx.mapper.CategoryMapper;
+import com.yx.mapper.DBConnect;
 
 public class CategoryAddInit extends DBConnect {
 
@@ -23,15 +24,16 @@ public class CategoryAddInit extends DBConnect {
 		CategoryExample cge = new CategoryExample();
 		Criteria c = cge.createCriteria();
 		c.andAbatetimeIsNull();
-		List<Object> resultList = ss.selectList("com.yx.mapper.CategoryMapper.selectByExample", cge);
+		CategoryMapper cm = ss.getMapper(CategoryMapper.class);
+		List<Category> resultcList = cm.selectByExample(cge);
 		DBOpration dbo = new DBOpration();
 		// 一级指标的读取
 		//String categorySql = dbo.tableforAll("category");
 		//categorySql = categorySql + " where abateTime is null";
 		List<Category> catList = new ArrayList<Category>();
 		//List<Object> resultList = dbo.excuteSQL(categorySql, Category.class);
-		for (int i = 0; i < resultList.size(); i++){
-			catList.add((Category) resultList.get(i));
+		for (int i = 0; i < resultcList.size(); i++){
+			catList.add(resultcList.get(i));
 		}
 		ca.setCategoryList(catList);
 		
@@ -43,7 +45,7 @@ public class CategoryAddInit extends DBConnect {
 			String typeSql = dbo.selectWhere("type", map);
 			typeSql = typeSql + " and abateTime is null";
 			List<Type> typeList = new ArrayList<Type>();
-			resultList = dbo.excuteSQL(typeSql, Type.class);
+			List<Object> resultList = dbo.excuteSQL(typeSql, Type.class);
 			for (int i = 0; i < resultList.size(); i++){
 				typeList.add((Type) resultList.get(i));
 			}
@@ -52,7 +54,7 @@ public class CategoryAddInit extends DBConnect {
 			String typeSql = dbo.tableforAll("type");
 			typeSql = typeSql + " where abateTime is null";
 			List<Type> typeList = new ArrayList<Type>();
-			resultList = dbo.excuteSQL(typeSql, Type.class);
+			List<Object> resultList = dbo.excuteSQL(typeSql, Type.class);
 			for (int i = 0; i < resultList.size(); i++){
 				typeList.add((Type) resultList.get(i));
 			}

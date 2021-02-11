@@ -1,11 +1,10 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
-<mapper namespace="com.yx.mapper.TypeMapper" >
+<mapper namespace="com.yx.mapper.CategoryMapper" >
 
-    <resultMap id="BaseResultMap" type="com.yx.po.Type" >
+    <resultMap id="BaseResultMap" type="com.yx.domain.Category" >
         <id column="id" property="id" jdbcType="INTEGER" />
-        <result column="typeName" property="typename" jdbcType="VARCHAR" />
-        <result column="category_type" property="categoryType" jdbcType="VARCHAR" />
+        <result column="categoryName" property="categoryname" jdbcType="VARCHAR" />
         <result column="abateTime" property="abatetime" jdbcType="DATE" />
     </resultMap>
 
@@ -70,16 +69,16 @@
     </sql>
 
     <sql id="Base_Column_List" >
-        id, typeName, category_type, abateTime
+        id, categoryName, abateTime
     </sql>
 
-    <select id="selectByExample" resultMap="BaseResultMap" parameterType="com.yx.po.TypeExample" >
+    <select id="selectByExample" resultMap="BaseResultMap" parameterType="com.yx.mapper.CategoryExample" >
         select
         <if test="distinct" >
             distinct
         </if>
         <include refid="Base_Column_List" />
-        from type
+        from category
         <if test="_parameter != null" >
             <include refid="Example_Where_Clause" />
         </if>
@@ -91,40 +90,37 @@
     <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
         select 
         <include refid="Base_Column_List" />
-        from type
+        from category
         where id = #{id,jdbcType=INTEGER}
     </select>
 
     <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
-        delete from type
+        delete from category
         where id = #{id,jdbcType=INTEGER}
     </delete>
 
-    <delete id="deleteByExample" parameterType="com.yx.po.TypeExample" >
-        delete from type
+    <delete id="deleteByExample" parameterType="com.yx.mapper.CategoryExample" >
+        delete from category
         <if test="_parameter != null" >
             <include refid="Example_Where_Clause" />
         </if>
     </delete>
 
-    <insert id="insert" parameterType="com.yx.po.Type" >
-        insert into type (id, typeName, category_type, 
-            abateTime)
-        values (#{id,jdbcType=INTEGER}, #{typename,jdbcType=VARCHAR}, #{categoryType,jdbcType=VARCHAR}, 
-            #{abatetime,jdbcType=DATE})
+    <insert id="insert" parameterType="com.yx.domain.Category" >
+        insert into category (id, categoryName, abateTime
+            )
+        values (#{id,jdbcType=INTEGER}, #{categoryname,jdbcType=VARCHAR}, #{abatetime,jdbcType=DATE}
+            )
     </insert>
 
-    <insert id="insertSelective" parameterType="com.yx.po.Type" >
-        insert into type
+    <insert id="insertSelective" parameterType="com.yx.domain.Category" >
+        insert into category
         <trim prefix="(" suffix=")" suffixOverrides="," >
             <if test="id != null" >
                 id,
             </if>
-            <if test="typename != null" >
-                typeName,
-            </if>
-            <if test="categoryType != null" >
-                category_type,
+            <if test="categoryname != null" >
+                categoryName,
             </if>
             <if test="abatetime != null" >
                 abateTime,
@@ -134,11 +130,8 @@
             <if test="id != null" >
                 #{id,jdbcType=INTEGER},
             </if>
-            <if test="typename != null" >
-                #{typename,jdbcType=VARCHAR},
-            </if>
-            <if test="categoryType != null" >
-                #{categoryType,jdbcType=VARCHAR},
+            <if test="categoryname != null" >
+                #{categoryname,jdbcType=VARCHAR},
             </if>
             <if test="abatetime != null" >
                 #{abatetime,jdbcType=DATE},
@@ -146,24 +139,21 @@
         </trim>
     </insert>
 
-    <select id="countByExample" parameterType="com.yx.po.TypeExample" resultType="java.lang.Integer" >
-        select count(*) from type
+    <select id="countByExample" parameterType="com.yx.mapper.CategoryExample" resultType="java.lang.Integer" >
+        select count(*) from category
         <if test="_parameter != null" >
             <include refid="Example_Where_Clause" />
         </if>
     </select>
 
     <update id="updateByExampleSelective" parameterType="map" >
-        update type
+        update category
         <set >
             <if test="record.id != null" >
                 id = #{record.id,jdbcType=INTEGER},
             </if>
-            <if test="record.typename != null" >
-                typeName = #{record.typename,jdbcType=VARCHAR},
-            </if>
-            <if test="record.categoryType != null" >
-                category_type = #{record.categoryType,jdbcType=VARCHAR},
+            <if test="record.categoryname != null" >
+                categoryName = #{record.categoryname,jdbcType=VARCHAR},
             </if>
             <if test="record.abatetime != null" >
                 abateTime = #{record.abatetime,jdbcType=DATE},
@@ -175,24 +165,20 @@
     </update>
 
     <update id="updateByExample" parameterType="map" >
-        update type
+        update category
         set id = #{record.id,jdbcType=INTEGER},
-            typeName = #{record.typename,jdbcType=VARCHAR},
-            category_type = #{record.categoryType,jdbcType=VARCHAR},
+            categoryName = #{record.categoryname,jdbcType=VARCHAR},
             abateTime = #{record.abatetime,jdbcType=DATE}
         <if test="_parameter != null" >
             <include refid="Update_By_Example_Where_Clause" />
         </if>
     </update>
 
-    <update id="updateByPrimaryKeySelective" parameterType="com.yx.po.Type" >
-        update type
+    <update id="updateByPrimaryKeySelective" parameterType="com.yx.domain.Category" >
+        update category
         <set >
-            <if test="typename != null" >
-                typeName = #{typename,jdbcType=VARCHAR},
-            </if>
-            <if test="categoryType != null" >
-                category_type = #{categoryType,jdbcType=VARCHAR},
+            <if test="categoryname != null" >
+                categoryName = #{categoryname,jdbcType=VARCHAR},
             </if>
             <if test="abatetime != null" >
                 abateTime = #{abatetime,jdbcType=DATE},
@@ -201,10 +187,9 @@
         where id = #{id,jdbcType=INTEGER}
     </update>
 
-    <update id="updateByPrimaryKey" parameterType="com.yx.po.Type" >
-        update type
-        set typeName = #{typename,jdbcType=VARCHAR},
-            category_type = #{categoryType,jdbcType=VARCHAR},
+    <update id="updateByPrimaryKey" parameterType="com.yx.domain.Category" >
+        update category
+        set categoryName = #{categoryname,jdbcType=VARCHAR},
             abateTime = #{abatetime,jdbcType=DATE}
         where id = #{id,jdbcType=INTEGER}
     </update>
