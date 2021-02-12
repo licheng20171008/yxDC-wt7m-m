@@ -24,8 +24,9 @@ public class CategoryAddInit extends DBConnect {
 		CategoryExample cge = new CategoryExample();
 		Criteria c = cge.createCriteria();
 		c.andAbatetimeIsNull();
-		CategoryMapper cm = ss.getMapper(CategoryMapper.class);
-		List<Category> resultcList = cm.selectByExample(cge);
+		//CategoryMapper cm = ss.getMapper(CategoryMapper.class);
+		//List<Category> resultcList = cm.selectByExample(cge);
+		List<Category> resultcList = ss.selectList("com.yx.mapper.CategoryMapper.selectByExample", cge);
 		DBOpration dbo = new DBOpration();
 		// 一级指标的读取
 		//String categorySql = dbo.tableforAll("category");
