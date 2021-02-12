@@ -58,7 +58,7 @@ public class ReportServlet extends HttpServlet {
 				afp.setType((Type) dbo.InitBean(Type.class));
 
 				// 指标标准表单
-				afp.setIndexDetail((Indexdetail) dbo.InitBean(Indexdetail.class));
+				afp.setIndexdetail((Indexdetail) dbo.InitBean(Indexdetail.class));
 				if (afp.getDepCurPage() == 0){
 					afp.setDepCurPage(1);
 					session.setAttribute("department", afp.getDepartment());
@@ -73,7 +73,7 @@ public class ReportServlet extends HttpServlet {
 				afp.setType((Type) dbo.InitBean(Type.class));
 
 				// 指标标准表单
-				afp.setIndexDetail((Indexdetail) dbo.InitBean(Indexdetail.class));
+				afp.setIndexdetail((Indexdetail) dbo.InitBean(Indexdetail.class));
 				if (afp.getCatCurPage() == 0){
 					afp.setCatCurPage(1);
 					session.setAttribute("category", afp.getCategory());
@@ -88,7 +88,7 @@ public class ReportServlet extends HttpServlet {
 				afp.setCategory((Category) dbo.InitBean(Category.class));
 				
 				// 指标标准表单
-				afp.setIndexDetail((Indexdetail) dbo.InitBean(Indexdetail.class));
+				afp.setIndexdetail((Indexdetail) dbo.InitBean(Indexdetail.class));
 				if (afp.getTypeCurPage() == 0){
 					afp.setTypeCurPage(1);
 					session.setAttribute("type", afp.getType());
@@ -106,9 +106,9 @@ public class ReportServlet extends HttpServlet {
 				afp.setType((Type) dbo.InitBean(Type.class));
 				if (afp.getIdCurPage() == 0){
 					afp.setIdCurPage(1);
-					session.setAttribute("indexDetail", afp.getIndexDetail());
+					session.setAttribute("indexdetail", afp.getIndexdetail());
 				} else {
-					afp.setIndexDetail((Indexdetail) session.getAttribute("indexDetail"));
+					afp.setIndexdetail((Indexdetail) session.getAttribute("indexdetail"));
 				}
 			}
 			afp = ceb.excute(afp);
@@ -135,7 +135,7 @@ public class ReportServlet extends HttpServlet {
 			afp.setType((Type) dbo.InitBean(Type.class));
 
 			// 指标标准表单
-			afp.setIndexDetail((Indexdetail) dbo.InitBean(Indexdetail.class));
+			afp.setIndexdetail((Indexdetail) dbo.InitBean(Indexdetail.class));
 			request.setAttribute("CategoryAdd", afp);
 			request.getRequestDispatcher("/jsp/yxCategoryEdit.jsp").forward(request, response);
 		}

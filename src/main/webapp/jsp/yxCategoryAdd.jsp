@@ -41,8 +41,8 @@
 	if (ca.getType() == null) {
 		ca.setType(new Type());
 	}
-	if (ca.getIndexDetail() == null) {
-		ca.setIndexDetail(new Indexdetail());
+	if (ca.getIndexdetail() == null) {
+		ca.setIndexdetail(new Indexdetail());
 	}
 	if (ca.getDepartment() == null) {
         ca.setDepartment(new Department());
@@ -50,11 +50,11 @@
 	String businessKey = ca.getBusinessKey();
 	String message = ca.getMessage();
 	String category_type = ca.getType().getCategoryType();
-	String category_detail = ca.getIndexDetail().getCategory_detail();
-	String type_detail = ca.getIndexDetail().getType_detail();
-	String indexDetail = ca.getIndexDetail().getIndexDetail();
-	String indexFormula = ca.getIndexDetail().getIndexFormula();
-	String remark = ca.getIndexDetail().getRemark();
+	String category_detail = ca.getIndexdetail().getCategory_detail();
+	String type_detail = ca.getIndexdetail().getType_detail();
+	String indexdetail = ca.getIndexdetail().getIndexDetail();
+	String indexFormula = ca.getIndexdetail().getIndexFormula();
+	String remark = ca.getIndexdetail().getRemark();
 %>
 <body>
 	<div class="form_content">
@@ -126,10 +126,10 @@
 				<legend>指标明细</legend>
 				<div class="form-row">
 					<div class="field-label">
-						<label for="CategoryAdd.IndexDetail.category_detail">一级分类名称：</label>
+						<label for="CategoryAdd.Indexdetail.category_detail">一级分类名称：</label>
 					</div>
 					<div class="field-widget">
-						<select id="category_detail" name="CategoryAdd.IndexDetail.category_detail" class="validate-selection" onchange="changeValue(1);">
+						<select id="category_detail" name="CategoryAdd.Indexdetail.category_detail" class="validate-selection" onchange="changeValue(1);">
 							<option style="width: 400px; font-family: '宋体'; font-size: 19px;" value="">--请选择一级分类--</option>
 							<c:forEach var="cat" items="${catList }">
 								<option style="width: 400px; font-family: '宋体'; font-size: 19px;" value="${ cat.id}">${ cat.categoryname}</option>
@@ -139,10 +139,10 @@
 					</div>
 					<div class="form-row">
 					<div class="field-label">
-						<label for="CategoryAdd.IndexDetail.type_detail">二级分类名称：</label>
+						<label for="CategoryAdd.Indexdetail.type_detail">二级分类名称：</label>
 					</div>
 					<div class="field-widget">
-						<select id="type_detail" name="CategoryAdd.IndexDetail.type_detail" class="validate-selection">
+						<select id="type_detail" name="CategoryAdd.Indexdetail.type_detail" class="validate-selection">
 							<option style="width: 400px; font-family: '宋体'; font-size: 19px;" value="">--请选择二级分类--</option>
 							<c:forEach var="type" items="${typeList }">
 								<option style="width: 400px; font-family: '宋体'; font-size: 19px;" value="${ type.id}">${ type.typename}</option>
@@ -152,66 +152,66 @@
 				</div>
 				<div class="form-row">
 					<div class="field-label">
-						<label for="CategoryAdd.IndexDetail.indexID">编号：</label>
+						<label for="CategoryAdd.Indexdetail.indexID">编号：</label>
 					</div>
 					<div class="field-widget">
-						<input type="text" id="indexID" name="CategoryAdd.IndexDetail.indexID" class="required" value="<%=ca.getIndexDetail().getIndexID()%>" />
+						<input type="text" id="indexID" name="CategoryAdd.Indexdetail.indexID" class="required" value="<%=ca.getIndexdetail().getIndexID()%>" />
 					</div>
 					</div>
 					<div class="form-row">
 					<div class="field-label">
-						<label for="CategoryAdd.IndexDetail.indexName">指标名称：</label>
+						<label for="CategoryAdd.Indexdetail.indexName">指标名称：</label>
 					</div>
 					<div class="field-widget">
-						<input type="text" id="indexName" name="CategoryAdd.IndexDetail.indexName" class="required" value="<%=ca.getIndexDetail().getIndexName()%>" />
+						<input type="text" id="indexName" name="CategoryAdd.Indexdetail.indexName" class="required" value="<%=ca.getIndexdetail().getIndexName()%>" />
 					</div>
 				</div>
 				<div class="form-row">
 					<div class="field-label">
-						<label for="CategoryAdd.IndexDetail.indexDetail">指标定义：</label>
+						<label for="CategoryAdd.Indexdetail.indexDetail">指标定义：</label>
 					</div>
 					<div class="field-widget">
-						<textarea id="indexDetail" name="CategoryAdd.IndexDetail.indexDetail" class="required"><%=ca.getIndexDetail().getIndexDetail() %></textarea>
+						<textarea id="indexDetail" name="CategoryAdd.Indexdetail.indexDetail" class="required"><%=ca.getIndexdetail().getIndexDetail() %></textarea>
 					</div>
 					</div>
                     <div class="form-row">
 					<div class="field-label">
-						<label for="CategoryAdd.IndexDetail.indexFormula">计算公式：</label>
+						<label for="CategoryAdd.Indexdetail.indexFormula">计算公式：</label>
 					</div>
 					<div class="field-widget">
-						<textarea id="indexFormula" name="CategoryAdd.IndexDetail.indexFormula" class="required"><%=ca.getIndexDetail().getIndexFormula() %></textarea>
+						<textarea id="indexFormula" name="CategoryAdd.Indexdetail.indexFormula" class="required"><%=ca.getIndexdetail().getIndexFormula() %></textarea>
 					</div>
 				</div>
 				<div class="form-row">
 					<div class="field-label">
-						<label for="CategoryAdd.IndexDetail.computingCycle">统计周期：</label>
+						<label for="CategoryAdd.Indexdetail.computingCycle">统计周期：</label>
 					</div>
 					<div class="field-widget">
-						<input type="text" id="computingCycle" name="CategoryAdd.IndexDetail.computingCycle" class="required" value="<%=ca.getIndexDetail().getComputingCycle()%>" />
+						<input type="text" id="computingCycle" name="CategoryAdd.Indexdetail.computingCycle" class="required" value="<%=ca.getIndexdetail().getComputingCycle()%>" />
 					</div>
 					</div>
                     <div class="form-row">
 					<div class="field-label">
-						<label for="CategoryAdd.IndexDetail.cycleUnit">周期单位：</label>
+						<label for="CategoryAdd.Indexdetail.cycleUnit">周期单位：</label>
 					</div>
 					<div class="field-widget">
-						<input type="text" id="cycleUnit" name="CategoryAdd.IndexDetail.cycleUnit" class="required" value="<%=ca.getIndexDetail().getCycleUnit()%>" />
+						<input type="text" id="cycleUnit" name="CategoryAdd.Indexdetail.cycleUnit" class="required" value="<%=ca.getIndexdetail().getCycleUnit()%>" />
 					</div>
 				</div>
 				<div class="form-row">
 					<div class="field-label">
-						<label for="CategoryAdd.IndexDetail.department">所属科室：</label>
+						<label for="CategoryAdd.Indexdetail.department">所属科室：</label>
 					</div>
 					<div class="field-widget">
-						<input type="text" id="department" name="CategoryAdd.IndexDetail.department" class="required" value="<%=ca.getIndexDetail().getDepartment()%>" />
+						<input type="text" id="department" name="CategoryAdd.Indexdetail.department" class="required" value="<%=ca.getIndexdetail().getDepartment()%>" />
 					</div>
 					</div>
                     <div class="form-row">
 					<div class="field-label">
-						<label for="CategoryAdd.IndexDetail.remark">备注：</label>
+						<label for="CategoryAdd.Indexdetail.remark">备注：</label>
 					</div>
 					<div class="field-widget">
-						<textarea id="remark" name="CategoryAdd.IndexDetail.remark" class="required"><%=ca.getIndexDetail().getRemark()%></textarea>
+						<textarea id="remark" name="CategoryAdd.Indexdetail.remark" class="required"><%=ca.getIndexdetail().getRemark()%></textarea>
 					</div>
 				</div>
 	</fieldset>

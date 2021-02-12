@@ -54,7 +54,7 @@ public class CategoryAdd {
 	private int typeCountPage;
 
 	// 指标标准表单
-	private Indexdetail indexDetail;
+	private Indexdetail indexdetail;
 	
 	// 指标标准表单集合
 	private List<Indexdetail> idList = new ArrayList<Indexdetail>();
@@ -116,13 +116,13 @@ public class CategoryAdd {
 	}
 
 	// 取得指标标准表单
-	public Indexdetail getIndexDetail() {
-		return indexDetail;
+	public Indexdetail getIndexdetail() {
+		return indexdetail;
 	}
 
 	// 设置指标标准表单
-	public void setIndexDetail(Indexdetail indexDetail) {
-		this.indexDetail = indexDetail;
+	public void setIndexdetail(Indexdetail indexdetail) {
+		this.indexdetail = indexdetail;
 	}
 
 	// 取得隐藏控制项

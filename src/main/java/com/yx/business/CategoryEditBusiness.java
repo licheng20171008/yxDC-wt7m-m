@@ -230,7 +230,7 @@ public class CategoryEditBusiness {
 			List<Indexdetail> idList = new ArrayList<Indexdetail>();
 			List<Indexdetail> idListTemp = new ArrayList<Indexdetail>();
 			Indexdetail id = new Indexdetail();
-			id = ca.getIndexDetail();
+			id = ca.getIndexdetail();
 			String category_detail = id.getCategory_detail();
 			String type_detail = id.getType_detail();
 			String indexID = id.getIndexID();

@@ -151,28 +151,28 @@
                 </tr>
                 <tr>
                     <td><span style="font-family: '宋体'; font-size: 19px;">编号：</span></td>
-                    <td><input type="text" id="indexID" name="CategoryAdd.IndexDetail.indexID" value="<%=ca.getIndexDetail().getIndexID() %>" /></td>
+                    <td><input type="text" id="indexID" name="CategoryAdd.IndexDetail.indexID" value="<%=ca.getIndexdetail().getIndexID() %>" /></td>
                     <td><span style="font-family: '宋体'; font-size: 19px;">指标名称：</span></td>
-                    <td><input type="text" id="indexName" name="CategoryAdd.IndexDetail.indexName" value="<%=ca.getIndexDetail().getIndexName() %>" /></td>
+                    <td><input type="text" id="indexName" name="CategoryAdd.IndexDetail.indexName" value="<%=ca.getIndexdetail().getIndexName() %>" /></td>
                     <td><input type="hidden" id="idi" name="CategoryAdd.IndexDetail.id" /></td>
                 </tr>
                 <tr>
                     <td><span style="font-family: '宋体'; font-size: 19px;">指标定义：</span></td>
-                    <td><textarea id="indexDetail" name="CategoryAdd.IndexDetail.indexDetail"><%=ca.getIndexDetail().getIndexDetail() %></textarea></td>
+                    <td><textarea id="indexDetail" name="CategoryAdd.IndexDetail.indexDetail"><%=ca.getIndexdetail().getIndexDetail() %></textarea></td>
                     <td><span style="font-family: '宋体'; font-size: 19px;">计算公式：</span></td>
-                    <td><textarea id="indexFormula" name="CategoryAdd.IndexDetail.indexFormula"><%=ca.getIndexDetail().getIndexFormula() %></textarea></td>
+                    <td><textarea id="indexFormula" name="CategoryAdd.IndexDetail.indexFormula"><%=ca.getIndexdetail().getIndexFormula() %></textarea></td>
                 </tr>
                 <tr>
                     <td><span style="font-family: '宋体'; font-size: 19px;">统计周期：</span></td>
-                    <td><input type="text" id="computingCycle" name="CategoryAdd.IndexDetail.computingCycle" value="<%=ca.getIndexDetail().getComputingCycle() %>" /></td>
+                    <td><input type="text" id="computingCycle" name="CategoryAdd.IndexDetail.computingCycle" value="<%=ca.getIndexdetail().getComputingCycle() %>" /></td>
                     <td><span style="font-family: '宋体'; font-size: 19px;">周期单位：</span></td>
-                    <td><input type="text" id="cycleUnit" name="CategoryAdd.IndexDetail.cycleUnit" value="<%=ca.getIndexDetail().getCycleUnit() %>" /></td>
+                    <td><input type="text" id="cycleUnit" name="CategoryAdd.IndexDetail.cycleUnit" value="<%=ca.getIndexdetail().getCycleUnit() %>" /></td>
                 </tr>
                 <tr>
                     <td><span style="font-family: '宋体'; font-size: 19px;">所属科室：</span></td>
-                    <td><input type="text" id="id_department" name="CategoryAdd.IndexDetail.department" value="<%=ca.getIndexDetail().getDepartment() %>"/></td>
+                    <td><input type="text" id="id_department" name="CategoryAdd.IndexDetail.department" value="<%=ca.getIndexdetail().getDepartment() %>"/></td>
                     <td><span style="font-family: '宋体'; font-size: 19px;">备注：</span></td>
-                    <td><textarea id="remark" name="CategoryAdd.IndexDetail.remark"><%=ca.getIndexDetail().getRemark() %></textarea></td>
+                    <td><textarea id="remark" name="CategoryAdd.IndexDetail.remark"><%=ca.getIndexdetail().getRemark() %></textarea></td>
                 </tr>
             </table>
         </div>
