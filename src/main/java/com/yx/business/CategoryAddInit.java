@@ -9,7 +9,6 @@ import com.yx.domain.Category;
 import com.yx.domain.Type;
 import com.yx.dto.CategoryAdd;
 import com.yx.mapper.CategoryExample;
-import com.yx.mapper.CategoryExample.Criteria;
 import com.yx.mapper.CategoryMapper;
 import com.yx.mapper.DBConnect;
 import com.yx.mapper.TypeExample;
@@ -21,7 +20,7 @@ public class CategoryAddInit extends DBConnect {
 		
 		SqlSession ss = this.ssf.openSession();
 		CategoryExample categoryexample = new CategoryExample();
-		Criteria categorycriteria = categoryexample.createCriteria();
+		com.yx.mapper.CategoryExample.Criteria categorycriteria = categoryexample.createCriteria();
 		categorycriteria.andAbatetimeIsNull();
 		CategoryMapper categorymapper = ss.getMapper(CategoryMapper.class);
 		List<Category> resultcList = categorymapper.selectByExample(categoryexample);

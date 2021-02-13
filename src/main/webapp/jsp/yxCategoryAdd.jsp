@@ -103,10 +103,10 @@
 				<legend>二级分类</legend>
 				<div class="form-row">
 					<div class="field-label">
-						<label for="CategoryAdd.Type.category_type">一级分类名称：</label>
+						<label for="CategoryAdd.Type.categoryType">一级分类名称：</label>
 					</div>
 					<div class="field-widget">
-						<select id="category_type" name="CategoryAdd.Type.category_type" class="validate-selection">
+						<select id="category_type" name="CategoryAdd.Type.categoryType" class="validate-selection">
 							<c:forEach var="cat" items="${catList}">
 								<option style="width: 400px; font-family: '宋体'; font-size: 19px;" value="${cat.id}">${cat.categoryname}</option>
 							</c:forEach>
@@ -190,7 +190,7 @@
 						<input type="text" id="computingCycle" name="CategoryAdd.Indexdetail.computingCycle" class="required" value="<%=ca.getIndexdetail().getComputingCycle()%>" />
 					</div>
 					</div>
-                    <div class="form-row">
+					<div class="form-row">
 					<div class="field-label">
 						<label for="CategoryAdd.Indexdetail.cycleUnit">周期单位：</label>
 					</div>

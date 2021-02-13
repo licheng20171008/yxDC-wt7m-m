@@ -116,7 +116,7 @@
     <hr id="line2" style="FILTER: alpha(opacity = 100, finishopacity = 0, style = 3)" width="100%" color="#987cb9" size="3" />
     <div id="typeDIV">
             <span style="font-family: '宋体'; font-size: 19px;">一级指标名称：</span> 
-            <select id="category_type" name="CategoryAdd.Type.category_type" style="font-family: '宋体'; font-size: 19px;" >
+            <select id="category_type" name="CategoryAdd.Type.categoryType" style="font-family: '宋体'; font-size: 19px;" >
 				<option style="width: 400px; font-family: '宋体'; font-size: 19px;" value="">--请选择一级指标--</option>
 				<c:forEach var="cat" items="${catList }">
 					<option style="width: 400px; font-family: '宋体'; font-size: 19px;" value="${ cat.id}">${ cat.categoryname}</option>
@@ -132,7 +132,7 @@
                 <tr>
                     <td><span style="font-family: '宋体'; font-size: 19px;">一级指标名称：</span></td>
                     <td>
-                        <select id="category_detail" name="CategoryAdd.IndexDetail.category_detail" style="font-family: '宋体'; font-size: 19px;" onchange="changeValue(1);">
+                        <select id="category_detail" name="CategoryAdd.Indexdetail.category_detail" style="font-family: '宋体'; font-size: 19px;" onchange="changeValue(1);">
                             <option style="width: 400px; font-family: '宋体'; font-size: 19px;" value="">--请选择一级指标--</option>
                             <c:forEach var="cat" items="${catList }">
                                 <option style="width: 400px; font-family: '宋体'; font-size: 19px;" value="${ cat.id}">${ cat.categoryname}</option>
@@ -141,7 +141,7 @@
                     </td>
                     <td><span style="font-family: '宋体'; font-size: 19px;">二级指标名称：</span></td>
                     <td>
-                        <select id="type_detail" name="CategoryAdd.IndexDetail.type_detail" style="font-family: '宋体'; font-size: 19px;">
+                        <select id="type_detail" name="CategoryAdd.Indexdetail.type_detail" style="font-family: '宋体'; font-size: 19px;">
                             <option style="width: 400px; font-family: '宋体'; font-size: 19px;" value="">--请选择二级指标--</option>
                             <c:forEach var="type" items="${typeList }">
                                 <option style="width: 400px; font-family: '宋体'; font-size: 19px;" value="${ type.id}">${ type.typename}</option>
@@ -151,28 +151,28 @@
                 </tr>
                 <tr>
                     <td><span style="font-family: '宋体'; font-size: 19px;">编号：</span></td>
-                    <td><input type="text" id="indexID" name="CategoryAdd.IndexDetail.indexID" value="<%=ca.getIndexdetail().getIndexID() %>" /></td>
+                    <td><input type="text" id="indexID" name="CategoryAdd.Indexdetail.indexID" value="<%=ca.getIndexdetail().getIndexID() %>" /></td>
                     <td><span style="font-family: '宋体'; font-size: 19px;">指标名称：</span></td>
-                    <td><input type="text" id="indexName" name="CategoryAdd.IndexDetail.indexName" value="<%=ca.getIndexdetail().getIndexName() %>" /></td>
-                    <td><input type="hidden" id="idi" name="CategoryAdd.IndexDetail.id" /></td>
+                    <td><input type="text" id="indexName" name="CategoryAdd.Indexdetail.indexName" value="<%=ca.getIndexdetail().getIndexName() %>" /></td>
+                    <td><input type="hidden" id="idi" name="CategoryAdd.Indexdetail.id" /></td>
                 </tr>
                 <tr>
                     <td><span style="font-family: '宋体'; font-size: 19px;">指标定义：</span></td>
-                    <td><textarea id="indexDetail" name="CategoryAdd.IndexDetail.indexDetail"><%=ca.getIndexdetail().getIndexDetail() %></textarea></td>
+                    <td><textarea id="indexDetail" name="CategoryAdd.Indexdetail.indexDetail"><%=ca.getIndexdetail().getIndexDetail() %></textarea></td>
                     <td><span style="font-family: '宋体'; font-size: 19px;">计算公式：</span></td>
-                    <td><textarea id="indexFormula" name="CategoryAdd.IndexDetail.indexFormula"><%=ca.getIndexdetail().getIndexFormula() %></textarea></td>
+                    <td><textarea id="indexFormula" name="CategoryAdd.Indexdetail.indexFormula"><%=ca.getIndexdetail().getIndexFormula() %></textarea></td>
                 </tr>
                 <tr>
                     <td><span style="font-family: '宋体'; font-size: 19px;">统计周期：</span></td>
-                    <td><input type="text" id="computingCycle" name="CategoryAdd.IndexDetail.computingCycle" value="<%=ca.getIndexdetail().getComputingCycle() %>" /></td>
+                    <td><input type="text" id="computingCycle" name="CategoryAdd.Indexdetail.computingCycle" value="<%=ca.getIndexdetail().getComputingCycle() %>" /></td>
                     <td><span style="font-family: '宋体'; font-size: 19px;">周期单位：</span></td>
-                    <td><input type="text" id="cycleUnit" name="CategoryAdd.IndexDetail.cycleUnit" value="<%=ca.getIndexdetail().getCycleUnit() %>" /></td>
+                    <td><input type="text" id="cycleUnit" name="CategoryAdd.Indexdetail.cycleUnit" value="<%=ca.getIndexdetail().getCycleUnit() %>" /></td>
                 </tr>
                 <tr>
                     <td><span style="font-family: '宋体'; font-size: 19px;">所属科室：</span></td>
-                    <td><input type="text" id="id_department" name="CategoryAdd.IndexDetail.department" value="<%=ca.getIndexdetail().getDepartment() %>"/></td>
+                    <td><input type="text" id="id_department" name="CategoryAdd.Indexdetail.department" value="<%=ca.getIndexdetail().getDepartment() %>"/></td>
                     <td><span style="font-family: '宋体'; font-size: 19px;">备注：</span></td>
-                    <td><textarea id="remark" name="CategoryAdd.IndexDetail.remark"><%=ca.getIndexdetail().getRemark() %></textarea></td>
+                    <td><textarea id="remark" name="CategoryAdd.Indexdetail.remark"><%=ca.getIndexdetail().getRemark() %></textarea></td>
                 </tr>
             </table>
         </div>
