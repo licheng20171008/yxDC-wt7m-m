@@ -57,7 +57,7 @@ public class DBOpration {
 						Object value = null;
 						if ("String".equals(field.getType().getSimpleName())) {
 							value = rs.getString(name);
-						} else if ("int".equals(field.getType().getName())) {
+						} else if ("int".equals(field.getType().getName()) || "java.lang.Integer".equals(field.getType().getName())) {
 							value = rs.getInt(name);
 						} else if ("Date".equals(field.getType().getSimpleName())) {
 							value = rs.getDate(name);

@@ -214,7 +214,7 @@
                 <tr>
                     <td>${dep.id }</td>
                     <td>${dep.name }</td>
-                    <td>${dep.abateTime }</td>
+                    <td>${dep.abatetime }</td>
                     <td align="center">
                         <input type="button" onclick="depChange(this)" value="修改" /> 
                     </td>
@@ -255,7 +255,7 @@
                 <tr>
                     <td>${catView.id }</td>
                     <td>${catView.categoryname }</td>
-                    <td>${catView.abateTime }</td>
+                    <td>${catView.abatetime }</td>
                     <td align="center">
                         <input type="button" onclick="catChange(this)" value="修改" /> 
                     </td>
@@ -297,8 +297,8 @@
                 <tr>
                     <td>${typeView.id }</td>
                     <td>${typeView.typename }</td>
-                    <td>${typeView.category_type }</td>
-                    <td>${typeView.abateTime }</td>
+                    <td>${typeView.categoryType }</td>
+                    <td>${typeView.abatetime }</td>
                     <td align="center">
                         <input type="button" onclick="typeChange(this)" value="修改" /> 
                     </td>
