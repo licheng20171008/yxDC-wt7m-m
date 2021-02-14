@@ -20,7 +20,7 @@ public class RequestOperation {
 			String para = it.next();
 			String objPara = para.substring(0, para.lastIndexOf("."));
 			Class<?> typeClass = fieldMethod.get(para).getParameterTypes()[0];
-			if (request.getParameter(para) != null && !request.getParameter(para).isEmpty()){
+			if (request.getParameter(para) != null && !request.getParameter(para).isEmpty() && !"null".equals(request.getParameter(para))){
 				if (typeClass == int.class || typeClass == Integer.class){
 					fieldMethod.get(para).invoke(objMap.get(objPara), Integer.parseInt(request.getParameter(para)));
 				} else {

@@ -4,17 +4,17 @@
 
     <resultMap id="BaseResultMap" type="com.yx.domain.Indexdetail" >
         <id column="id" property="id" jdbcType="INTEGER" />
-        <result column="category_detail" property="categoryDetail" jdbcType="VARCHAR" />
-        <result column="type_detail" property="typeDetail" jdbcType="VARCHAR" />
-        <result column="indexID" property="indexid" jdbcType="VARCHAR" />
-        <result column="indexName" property="indexname" jdbcType="VARCHAR" />
-        <result column="indexDetail" property="indexdetail" jdbcType="VARCHAR" />
-        <result column="indexFormula" property="indexformula" jdbcType="VARCHAR" />
-        <result column="computingCycle" property="computingcycle" jdbcType="VARCHAR" />
-        <result column="cycleUnit" property="cycleunit" jdbcType="VARCHAR" />
+        <result column="category_detail" property="category_detail" jdbcType="VARCHAR" />
+        <result column="type_detail" property="type_detail" jdbcType="VARCHAR" />
+        <result column="indexID" property="indexID" jdbcType="VARCHAR" />
+        <result column="indexName" property="indexName" jdbcType="VARCHAR" />
+        <result column="indexDetail" property="indexDetail" jdbcType="VARCHAR" />
+        <result column="indexFormula" property="indexFormula" jdbcType="VARCHAR" />
+        <result column="computingCycle" property="computingCycle" jdbcType="VARCHAR" />
+        <result column="cycleUnit" property="cycleUnit" jdbcType="VARCHAR" />
         <result column="department" property="department" jdbcType="VARCHAR" />
         <result column="remark" property="remark" jdbcType="VARCHAR" />
-        <result column="abateTime" property="abatetime" jdbcType="DATE" />
+        <result column="abateTime" property="abateTime" jdbcType="DATE" />
     </resultMap>
 
     <sql id="Example_Where_Clause" >
@@ -122,10 +122,10 @@
             indexFormula, computingCycle, cycleUnit, 
             department, remark, abateTime
             )
-        values (#{id,jdbcType=INTEGER}, #{categoryDetail,jdbcType=VARCHAR}, #{typeDetail,jdbcType=VARCHAR}, 
-            #{indexid,jdbcType=VARCHAR}, #{indexname,jdbcType=VARCHAR}, #{indexdetail,jdbcType=VARCHAR}, 
-            #{indexformula,jdbcType=VARCHAR}, #{computingcycle,jdbcType=VARCHAR}, #{cycleunit,jdbcType=VARCHAR}, 
-            #{department,jdbcType=VARCHAR}, #{remark,jdbcType=VARCHAR}, #{abatetime,jdbcType=DATE}
+        values (#{id,jdbcType=INTEGER}, #{category_detail,jdbcType=VARCHAR}, #{type_detail,jdbcType=VARCHAR}, 
+            #{indexID,jdbcType=VARCHAR}, #{indexName,jdbcType=VARCHAR}, #{indexDetail,jdbcType=VARCHAR}, 
+            #{indexFormula,jdbcType=VARCHAR}, #{computingCycle,jdbcType=VARCHAR}, #{cycleUnit,jdbcType=VARCHAR}, 
+            #{department,jdbcType=VARCHAR}, #{remark,jdbcType=VARCHAR}, #{abateTime,jdbcType=DATE}
             )
     </insert>
 
@@ -135,28 +135,28 @@
             <if test="id != null" >
                 id,
             </if>
-            <if test="categoryDetail != null" >
+            <if test="category_detail != null" >
                 category_detail,
             </if>
-            <if test="typeDetail != null" >
+            <if test="type_detail != null" >
                 type_detail,
             </if>
-            <if test="indexid != null" >
+            <if test="indexID != null" >
                 indexID,
             </if>
-            <if test="indexname != null" >
+            <if test="indexName != null" >
                 indexName,
             </if>
-            <if test="indexdetail != null" >
+            <if test="indexDetail != null" >
                 indexDetail,
             </if>
-            <if test="indexformula != null" >
+            <if test="indexFormula != null" >
                 indexFormula,
             </if>
-            <if test="computingcycle != null" >
+            <if test="computingCycle != null" >
                 computingCycle,
             </if>
-            <if test="cycleunit != null" >
+            <if test="cycleUnit != null" >
                 cycleUnit,
             </if>
             <if test="department != null" >
@@ -165,7 +165,7 @@
             <if test="remark != null" >
                 remark,
             </if>
-            <if test="abatetime != null" >
+            <if test="abateTime != null" >
                 abateTime,
             </if>
         </trim>
@@ -173,29 +173,29 @@
             <if test="id != null" >
                 #{id,jdbcType=INTEGER},
             </if>
-            <if test="categoryDetail != null" >
-                #{categoryDetail,jdbcType=VARCHAR},
+            <if test="category_detail != null" >
+                #{category_detail,jdbcType=VARCHAR},
             </if>
-            <if test="typeDetail != null" >
-                #{typeDetail,jdbcType=VARCHAR},
+            <if test="type_detail != null" >
+                #{type_detail,jdbcType=VARCHAR},
             </if>
-            <if test="indexid != null" >
-                #{indexid,jdbcType=VARCHAR},
+            <if test="indexID != null" >
+                #{indexID,jdbcType=VARCHAR},
             </if>
-            <if test="indexname != null" >
-                #{indexname,jdbcType=VARCHAR},
+            <if test="indexName != null" >
+                #{indexName,jdbcType=VARCHAR},
             </if>
-            <if test="indexdetail != null" >
-                #{indexdetail,jdbcType=VARCHAR},
+            <if test="indexDetail != null" >
+                #{indexDetail,jdbcType=VARCHAR},
             </if>
-            <if test="indexformula != null" >
-                #{indexformula,jdbcType=VARCHAR},
+            <if test="indexFormula != null" >
+                #{indexFormula,jdbcType=VARCHAR},
             </if>
-            <if test="computingcycle != null" >
-                #{computingcycle,jdbcType=VARCHAR},
+            <if test="computingCycle != null" >
+                #{computingCycle,jdbcType=VARCHAR},
             </if>
-            <if test="cycleunit != null" >
-                #{cycleunit,jdbcType=VARCHAR},
+            <if test="cycleUnit != null" >
+                #{cycleUnit,jdbcType=VARCHAR},
             </if>
             <if test="department != null" >
                 #{department,jdbcType=VARCHAR},
@@ -203,8 +203,8 @@
             <if test="remark != null" >
                 #{remark,jdbcType=VARCHAR},
             </if>
-            <if test="abatetime != null" >
-                #{abatetime,jdbcType=DATE},
+            <if test="abateTime != null" >
+                #{abateTime,jdbcType=DATE},
             </if>
         </trim>
     </insert>
@@ -222,29 +222,29 @@
             <if test="record.id != null" >
                 id = #{record.id,jdbcType=INTEGER},
             </if>
-            <if test="record.categoryDetail != null" >
-                category_detail = #{record.categoryDetail,jdbcType=VARCHAR},
+            <if test="record.category_detail != null" >
+                category_detail = #{record.category_detail,jdbcType=VARCHAR},
             </if>
-            <if test="record.typeDetail != null" >
-                type_detail = #{record.typeDetail,jdbcType=VARCHAR},
+            <if test="record.type_detail != null" >
+                type_detail = #{record.type_detail,jdbcType=VARCHAR},
             </if>
-            <if test="record.indexid != null" >
-                indexID = #{record.indexid,jdbcType=VARCHAR},
+            <if test="record.indexID != null" >
+                indexID = #{record.indexID,jdbcType=VARCHAR},
             </if>
-            <if test="record.indexname != null" >
-                indexName = #{record.indexname,jdbcType=VARCHAR},
+            <if test="record.indexName != null" >
+                indexName = #{record.indexName,jdbcType=VARCHAR},
             </if>
-            <if test="record.indexdetail != null" >
-                indexDetail = #{record.indexdetail,jdbcType=VARCHAR},
+            <if test="record.indexDetail != null" >
+                indexDetail = #{record.indexDetail,jdbcType=VARCHAR},
             </if>
-            <if test="record.indexformula != null" >
-                indexFormula = #{record.indexformula,jdbcType=VARCHAR},
+            <if test="record.indexFormula != null" >
+                indexFormula = #{record.indexFormula,jdbcType=VARCHAR},
             </if>
-            <if test="record.computingcycle != null" >
-                computingCycle = #{record.computingcycle,jdbcType=VARCHAR},
+            <if test="record.computingCycle != null" >
+                computingCycle = #{record.computingCycle,jdbcType=VARCHAR},
             </if>
-            <if test="record.cycleunit != null" >
-                cycleUnit = #{record.cycleunit,jdbcType=VARCHAR},
+            <if test="record.cycleUnit != null" >
+                cycleUnit = #{record.cycleUnit,jdbcType=VARCHAR},
             </if>
             <if test="record.department != null" >
                 department = #{record.department,jdbcType=VARCHAR},
@@ -252,8 +252,8 @@
             <if test="record.remark != null" >
                 remark = #{record.remark,jdbcType=VARCHAR},
             </if>
-            <if test="record.abatetime != null" >
-                abateTime = #{record.abatetime,jdbcType=DATE},
+            <if test="record.abateTime != null" >
+                abateTime = #{record.abateTime,jdbcType=DATE},
             </if>
         </set>
         <if test="_parameter != null" >
@@ -264,17 +264,17 @@
     <update id="updateByExample" parameterType="map" >
         update indexdetail
         set id = #{record.id,jdbcType=INTEGER},
-            category_detail = #{record.categoryDetail,jdbcType=VARCHAR},
-            type_detail = #{record.typeDetail,jdbcType=VARCHAR},
-            indexID = #{record.indexid,jdbcType=VARCHAR},
-            indexName = #{record.indexname,jdbcType=VARCHAR},
-            indexDetail = #{record.indexdetail,jdbcType=VARCHAR},
-            indexFormula = #{record.indexformula,jdbcType=VARCHAR},
-            computingCycle = #{record.computingcycle,jdbcType=VARCHAR},
-            cycleUnit = #{record.cycleunit,jdbcType=VARCHAR},
+            category_detail = #{record.category_detail,jdbcType=VARCHAR},
+            type_detail = #{record.type_detail,jdbcType=VARCHAR},
+            indexID = #{record.indexID,jdbcType=VARCHAR},
+            indexName = #{record.indexName,jdbcType=VARCHAR},
+            indexDetail = #{record.indexDetail,jdbcType=VARCHAR},
+            indexFormula = #{record.indexFormula,jdbcType=VARCHAR},
+            computingCycle = #{record.computingCycle,jdbcType=VARCHAR},
+            cycleUnit = #{record.cycleUnit,jdbcType=VARCHAR},
             department = #{record.department,jdbcType=VARCHAR},
             remark = #{record.remark,jdbcType=VARCHAR},
-            abateTime = #{record.abatetime,jdbcType=DATE}
+            abateTime = #{record.abateTime,jdbcType=DATE}
         <if test="_parameter != null" >
             <include refid="Update_By_Example_Where_Clause" />
         </if>
@@ -283,29 +283,29 @@
     <update id="updateByPrimaryKeySelective" parameterType="com.yx.domain.Indexdetail" >
         update indexdetail
         <set >
-            <if test="categoryDetail != null" >
-                category_detail = #{categoryDetail,jdbcType=VARCHAR},
+            <if test="category_detail != null" >
+                category_detail = #{category_detail,jdbcType=VARCHAR},
             </if>
-            <if test="typeDetail != null" >
-                type_detail = #{typeDetail,jdbcType=VARCHAR},
+            <if test="type_detail != null" >
+                type_detail = #{type_detail,jdbcType=VARCHAR},
             </if>
-            <if test="indexid != null" >
-                indexID = #{indexid,jdbcType=VARCHAR},
+            <if test="indexID != null" >
+                indexID = #{indexID,jdbcType=VARCHAR},
             </if>
-            <if test="indexname != null" >
-                indexName = #{indexname,jdbcType=VARCHAR},
+            <if test="indexName != null" >
+                indexName = #{indexName,jdbcType=VARCHAR},
             </if>
-            <if test="indexdetail != null" >
-                indexDetail = #{indexdetail,jdbcType=VARCHAR},
+            <if test="indexDetail != null" >
+                indexDetail = #{indexDetail,jdbcType=VARCHAR},
             </if>
-            <if test="indexformula != null" >
-                indexFormula = #{indexformula,jdbcType=VARCHAR},
+            <if test="indexFormula != null" >
+                indexFormula = #{indexFormula,jdbcType=VARCHAR},
             </if>
-            <if test="computingcycle != null" >
-                computingCycle = #{computingcycle,jdbcType=VARCHAR},
+            <if test="computingCycle != null" >
+                computingCycle = #{computingCycle,jdbcType=VARCHAR},
             </if>
-            <if test="cycleunit != null" >
-                cycleUnit = #{cycleunit,jdbcType=VARCHAR},
+            <if test="cycleUnit != null" >
+                cycleUnit = #{cycleUnit,jdbcType=VARCHAR},
             </if>
             <if test="department != null" >
                 department = #{department,jdbcType=VARCHAR},
@@ -313,8 +313,8 @@
             <if test="remark != null" >
                 remark = #{remark,jdbcType=VARCHAR},
             </if>
-            <if test="abatetime != null" >
-                abateTime = #{abatetime,jdbcType=DATE},
+            <if test="abateTime != null" >
+                abateTime = #{abateTime,jdbcType=DATE},
             </if>
         </set>
         where id = #{id,jdbcType=INTEGER}
@@ -322,17 +322,17 @@
 
     <update id="updateByPrimaryKey" parameterType="com.yx.domain.Indexdetail" >
         update indexdetail
-        set category_detail = #{categoryDetail,jdbcType=VARCHAR},
-            type_detail = #{typeDetail,jdbcType=VARCHAR},
-            indexID = #{indexid,jdbcType=VARCHAR},
-            indexName = #{indexname,jdbcType=VARCHAR},
-            indexDetail = #{indexdetail,jdbcType=VARCHAR},
-            indexFormula = #{indexformula,jdbcType=VARCHAR},
-            computingCycle = #{computingcycle,jdbcType=VARCHAR},
-            cycleUnit = #{cycleunit,jdbcType=VARCHAR},
+        set category_detail = #{category_detail,jdbcType=VARCHAR},
+            type_detail = #{type_detail,jdbcType=VARCHAR},
+            indexID = #{indexID,jdbcType=VARCHAR},
+            indexName = #{indexName,jdbcType=VARCHAR},
+            indexDetail = #{indexDetail,jdbcType=VARCHAR},
+            indexFormula = #{indexFormula,jdbcType=VARCHAR},
+            computingCycle = #{computingCycle,jdbcType=VARCHAR},
+            cycleUnit = #{cycleUnit,jdbcType=VARCHAR},
             department = #{department,jdbcType=VARCHAR},
             remark = #{remark,jdbcType=VARCHAR},
-            abateTime = #{abatetime,jdbcType=DATE}
+            abateTime = #{abateTime,jdbcType=DATE}
         where id = #{id,jdbcType=INTEGER}
     </update>
 </mapper>
