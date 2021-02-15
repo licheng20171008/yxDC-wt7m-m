@@ -22,7 +22,7 @@ public class CategoryAddBusiness extends DBConnect {
 	public String excute(CategoryAdd ca){
 		String businessKey = ca.getBusinessKey();
 		String message = "";
-		SqlSession ss = this.ssf.openSession();
+		SqlSession ss = this.ssf.openSession(true);
 		if ("0".equals(businessKey)){
 			Category cat = ca.getCategory();
 			if (cat.getCategoryname().isEmpty()){

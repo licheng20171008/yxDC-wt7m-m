@@ -18,7 +18,7 @@ public class CategoryAddInit extends DBConnect {
 
 	public CategoryAdd excuteInit(CategoryAdd categoryadd){
 		
-		SqlSession ss = this.ssf.openSession();
+		SqlSession ss = this.ssf.openSession(true);
 		CategoryExample categoryexample = new CategoryExample();
 		com.yx.mapper.CategoryExample.Criteria categorycriteria = categoryexample.createCriteria();
 		categorycriteria.andAbatetimeIsNull();
