@@ -5,6 +5,8 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import org.apache.ibatis.session.SqlSession;
+
 import com.yx.DBConnect.DBOpration;
 import com.yx.domain.Category;
 import com.yx.domain.Department;
@@ -12,12 +14,16 @@ import com.yx.domain.Indexdetail;
 import com.yx.domain.Type;
 import com.yx.dto.CategoryAdd;
 import com.yx.dto.Common;
+import com.yx.mapper.DBConnect;
+import com.yx.mapper.DepartmentExample;
+import com.yx.mapper.DepartmentMapper;
 
-public class CategoryEditBusiness {
+public class CategoryEditBusiness extends DBConnect{
 
 	public CategoryAdd excute(CategoryAdd ca){
 		String businessKey = ca.getBusinessKey();
 		String operation = ca.getOperation();
+		SqlSession ss = this.ssf.openSession(true);
 		Map<String, String> map = new HashMap<String, String>();
 		List<Object> objList = null;
 		List<Object> objListTemp = null;
@@ -26,21 +32,11 @@ public class CategoryEditBusiness {
 		String sql = "";
 		if ("0".equals(businessKey)){
 			List<Department> depList = new ArrayList<Department>();
-			List<Department> depListTemp = new ArrayList<Department>();
 			Department dep = new Department();
 			dep = ca.getDepartment();
 			String depName = dep.getName();
 			int depid = dep.getId();
 			map.put("name", depName);
-			if (!depName.isEmpty()){
-				if ("1".equals(selectBox)){
-					sql = dbo.selectLikeWhere("department", map);
-				} else {
-					sql = dbo.selectWhere("department", map);
-				}
-			} else {
-				sql = dbo.tableforAll("department");
-			}
 			if ("1".equals(operation)) {
 				if (dbo.updateById("department", map, depid)) {
 					ca.setMessage("部门名称修改正确！！");
@@ -75,21 +71,28 @@ public class CategoryEditBusiness {
 					}
 				}
 			}
-			objListTemp = dbo.excuteSQL(sql, Department.class);
-			for(Object obj0 : objListTemp){
-				depListTemp.add((Department) obj0);
+			DepartmentMapper departmentmapper = ss.getMapper(DepartmentMapper.class);
+			DepartmentExample departmentexample = null;
+			if (!depName.isEmpty()) {
+				departmentexample = new DepartmentExample();
+				if ("1".equals(selectBox)) {
+					departmentexample.createCriteria().andNameLike(depName);
+				} else {
+					departmentexample.createCriteria().andNameEqualTo(depName);
+				}
 			}
-			ca.setDepCount(depListTemp.size());
-			if (depListTemp.size()%20 == 0){
-				ca.setDepCountPage(depListTemp.size()/20);
+			int depCount = departmentmapper.countByExample(departmentexample);
+			ca.setDepCount(depCount);
+			if (depCount%20 == 0){
+				ca.setDepCountPage(depCount/20);
 			} else {
-				ca.setDepCountPage(depListTemp.size()/20 + 1);
+				ca.setDepCountPage(depCount/20 + 1);
 			}
-			sql = sql +" limit " + (ca.getDepCurPage() - 1)*20 + ", " + ca.getDepCurPage()*20;
-			objList = dbo.excuteSQL(sql, Department.class);
-			for(Object obj : objList){
-				depList.add((Department) obj);
+			if (departmentexample == null) {
+				departmentexample = new DepartmentExample();
 			}
+			departmentexample.setLimitClause((ca.getDepCurPage() - 1)*20 + ", " + ca.getDepCurPage()*20);
+			depList = departmentmapper.selectByExample(departmentexample);
 			ca.setDepList(depList);
 		} else if ("1".equals(businessKey)){
 			List<Category> catList = new ArrayList<Category>();

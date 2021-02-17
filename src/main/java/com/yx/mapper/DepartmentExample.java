@@ -8,6 +8,8 @@ import java.util.List;
 public class DepartmentExample {
     protected String orderByClause;
 
+    protected String limitClause;
+    
     protected boolean distinct;
 
     protected List<Criteria> oredCriteria;
@@ -24,7 +26,15 @@ public class DepartmentExample {
         return orderByClause;
     }
 
-    public void setDistinct(boolean distinct) {
+    public String getLimitClause() {
+		return limitClause;
+	}
+
+	public void setLimitClause(String limitClause) {
+		this.limitClause = limitClause;
+	}
+
+	public void setDistinct(boolean distinct) {
         this.distinct = distinct;
     }
 

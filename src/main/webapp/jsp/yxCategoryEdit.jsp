@@ -461,16 +461,17 @@
     		$("#editForm").attr("action", "Export.action");
     	} else if (value != 100){
             if (value == 1 || value == 2){
-            	if (businessKey == "0" && $("#departmentID").val() == ""){
+            	alert($("#departmentID").val());
+            	if (businessKey == "0" && ($("#departmentID").val() == "" || $("#departmentID").val() == "null")){
             		flag = false;
             		alert("无法对部门进行操作，请查询并且选择修改的信息再进行操作！！");
-            	} else if (businessKey == "1" && $("#categoryID").val() == ""){
+            	} else if (businessKey == "1" && ($("#categoryID").val() == "" || $("#categoryID").val() == "null")){
             		flag = false;
                     alert("无法对一级分类进行操作，请查询并且选择修改的信息再进行操作！！");
-            	} else if (businessKey == "2" && $("#typeId").val() == ""){
+            	} else if (businessKey == "2" && ($("#typeId").val() == "" || $("#typeId").val() == "null")){
                     flag = false;
                     alert("无法对二级分类进行操作，请查询并且选择修改的信息再进行操作！！");
-                } else if (businessKey == "3" && $("#idi").val() == ""){
+                } else if (businessKey == "3" && ($("#idi").val() == "" || $("#idi").val() == "null")){
                     flag = false;
                     alert("无法对指标明细进行操作，请查询并且选择修改的信息再进行操作！！");
                 }
