@@ -66,6 +66,7 @@
     int typeSize = ca.getTypeCount();
     int typeCurPage = ca.getTypeCurPage();
     int typeCountPage = ca.getTypeCountPage();
+    String categorytype = ca.getType().getCategoryType();
     
     List<Indexdetail> idiList = new ArrayList<Indexdetail>();
     if(ca.getIdList() == null){
@@ -77,6 +78,8 @@
     int idSize = ca.getIdCount();
     int idCurPage = ca.getIdCurPage();
     int idCountPage = ca.getIdCountPage();
+    String idCategoryDetail = ca.getIndexdetail().getCategory_detail();
+    String idTypeDetail = ca.getIndexdetail().getType_detail();
     
     String businessKey = ca.getBusinessKey();
     String message = ca.getMessage();
@@ -445,6 +448,11 @@
             $("#categorySelect").hide();
             $("#typeSelect").show();
             $("#indexdetailSelect").hide();
+            
+            var categorytype = "<%=categorytype%>";
+            if(categorytype){
+            	$("#category_type").children("option[value=" +categorytype + "]").attr("selected", true);
+            }
         } else if (businessKey == "3") {
         	$("#line0").hide();
             $("#depDIV").hide();
@@ -458,6 +466,16 @@
             $("#categorySelect").hide();
             $("#typeSelect").hide();
             $("#indexdetailSelect").show();
+            
+            var idCategoryDetail = "<%=idCategoryDetail%>";
+            if (idCategoryDetail){
+            	$("#category_detail").children("option[value=" + idCategoryDetail + "]").attr("selected", true);
+            }
+            
+            var idTypeDetail = "<%=idTypeDetail%>";
+            if (idTypeDetail){
+            	$("#type_detail").children("option[value=" + idTypeDetail + "]").attr("selected", true);
+            }
         }
     }
     

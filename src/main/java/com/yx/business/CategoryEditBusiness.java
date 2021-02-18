@@ -117,7 +117,7 @@ public class CategoryEditBusiness extends DBConnect{
 			} else {
 				ca.setCatCountPage(catCount/20 + 1);
 			}
-			categoryexample.setLimitClause((ca.getDepCurPage() - 1)*20 + ", " + ca.getDepCurPage()*20);
+			categoryexample.setLimitClause((ca.getCatCurPage() - 1)*20 + ", " + ca.getCatCurPage()*20);
 			ca.setCategoryViewList(categorymapper.selectByExample(categoryexample));
 		} else if ("2".equals(businessKey)) {
 			TypeMapper typemapper = ss.getMapper(TypeMapper.class);
@@ -149,13 +149,19 @@ public class CategoryEditBusiness extends DBConnect{
 					}
 				}
 			}
+			com.yx.mapper.TypeExample.Criteria typecriteria = typeexample.createCriteria();
 			if (!type.getTypename().isEmpty()){
 				if ("1".equals(selectBox)){
-					typeexample.createCriteria().andTypenameLike("%"+type.getTypename()+"%");
+					typecriteria.andTypenameLike("%"+type.getTypename()+"%");
 				} else {
-					typeexample.createCriteria().andTypenameEqualTo(type.getTypename());
+					typecriteria.andTypenameEqualTo(type.getTypename());
 				}
 			}
+			
+			if (type.getCategoryType() != null && !type.getCategoryType().isEmpty()) {
+				typecriteria.andCategoryTypeEqualTo(type.getCategoryType());
+			}
+			
 			int typeCount = typemapper.countByExample(typeexample);
 			ca.setTypeCount(typeCount);
 			if (typeCount%20 == 0){
