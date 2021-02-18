@@ -83,6 +83,9 @@
         <if test="_parameter != null" >
             <include refid="Example_Where_Clause" />
         </if>
+        <if test="limitClause != null">
+            limit ${limitClause}
+        </if>
         <if test="orderByClause != null" >
             order by ${orderByClause}
         </if>
