@@ -7,7 +7,6 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import com.yx.DBConnect.DBOpration;
 import com.yx.business.CategoryAddBusiness;
 import com.yx.business.CategoryAddInit;
 import com.yx.domain.Category;
@@ -36,7 +35,6 @@ public class InitServlet extends HttpServlet {
 			throws ServletException, IOException {
 		request.setCharacterEncoding("UTF-8");
 		CategoryAddBusiness cab = new CategoryAddBusiness();
-		DBOpration dbo = new DBOpration();
 		String hiddenValue = request.getParameter("hiddenValue");
 		CategoryAdd categoryadd = (CategoryAdd) request.getAttribute("CategoryAdd") == null?new CategoryAdd():(CategoryAdd) request.getAttribute("CategoryAdd");
 		if (hiddenValue == null || hiddenValue.isEmpty()) {
@@ -49,40 +47,40 @@ public class InitServlet extends HttpServlet {
 			String businessKey = categoryadd.getBusinessKey();
 			if ("0".equals(businessKey)) {
 				// 部门
-				categoryadd.setDepartment((Department) dbo.InitBean(Department.class));
+				categoryadd.setDepartment(new Department());
 
 				// 二级分类指标
-				categoryadd.setType((Type) dbo.InitBean(Type.class));
+				categoryadd.setType(new Type());
 
 				// 指标标准表单
-				categoryadd.setIndexdetail((Indexdetail) dbo.InitBean(Indexdetail.class));
+				categoryadd.setIndexdetail(new Indexdetail());
 			}else if ("1".equals(businessKey)) {
 				// 部门
-				categoryadd.setDepartment((Department) dbo.InitBean(Department.class));
+				categoryadd.setDepartment(new Department());
 				
 				// 一级分类指标
-				categoryadd.setCategory((Category) dbo.InitBean(Category.class));
+				categoryadd.setCategory(new Category());
 				
 				// 指标标准表单
-				categoryadd.setIndexdetail((Indexdetail) dbo.InitBean(Indexdetail.class));
+				categoryadd.setIndexdetail(new Indexdetail());
 			}else if ("2".equals(businessKey)) {
 				// 部门
-				categoryadd.setDepartment((Department) dbo.InitBean(Department.class));
+				categoryadd.setDepartment(new Department());
 
 				// 一级分类指标
-				categoryadd.setCategory((Category) dbo.InitBean(Category.class));
+				categoryadd.setCategory(new Category());
 
 				// 二级分类指标
-				categoryadd.setType((Type) dbo.InitBean(Type.class));
+				categoryadd.setType(new Type());
 			}else if ("3".equals(businessKey)) {
 				// 一级分类指标
-				categoryadd.setCategory((Category) dbo.InitBean(Category.class));
+				categoryadd.setCategory(new Category());
 
 				// 二级分类指标
-				categoryadd.setType((Type) dbo.InitBean(Type.class));
+				categoryadd.setType(new Type());
 
 				// 指标标准表单
-				categoryadd.setIndexdetail((Indexdetail) dbo.InitBean(Indexdetail.class));
+				categoryadd.setIndexdetail(new Indexdetail());
 			}
 			if ("0".equals(categoryadd.getCategory_detailHidden())){
 				categoryadd.setMessage(cab.excute(categoryadd));
@@ -101,16 +99,16 @@ public class InitServlet extends HttpServlet {
 			categoryadd.setMessage("");
 			
 			// 部门
-			categoryadd.setDepartment((Department) dbo.InitBean(Department.class));
+			categoryadd.setDepartment(new Department());
 			
 			// 一级分类指标
-			categoryadd.setCategory((Category) dbo.InitBean(Category.class));
+			categoryadd.setCategory(new Category());
 			
 			// 二级分类指标
-			categoryadd.setType((Type) dbo.InitBean(Type.class));
+			categoryadd.setType(new Type());
 			
 			// 指标标准表单
-			categoryadd.setIndexdetail((Indexdetail) dbo.InitBean(Indexdetail.class));
+			categoryadd.setIndexdetail(new Indexdetail());
 			request.setAttribute("CategoryAdd", categoryadd);
 			request.getRequestDispatcher("/jsp/yxCategoryAdd.jsp").forward(request, response);
 		}

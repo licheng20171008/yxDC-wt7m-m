@@ -8,7 +8,6 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-import com.yx.DBConnect.DBOpration;
 import com.yx.business.CategoryAddInit;
 import com.yx.business.CategoryEditBusiness;
 import com.yx.domain.Category;
@@ -38,7 +37,6 @@ public class ReportServlet extends HttpServlet {
 		request.setCharacterEncoding("UTF-8");
 		HttpSession session = request.getSession(true);
 		CategoryEditBusiness ceb = new CategoryEditBusiness();
-		DBOpration dbo = new DBOpration();
 		String hiddenValue = request.getParameter("hiddenValue");
 		CategoryAdd afp = (CategoryAdd) request.getAttribute("CategoryAdd") == null?
 			new CategoryAdd():(CategoryAdd) request.getAttribute("CategoryAdd");
@@ -52,13 +50,13 @@ public class ReportServlet extends HttpServlet {
 			String businessKey = afp.getBusinessKey();
 			if ("0".equals(businessKey)){
 				// 一级分类指标
-				afp.setCategory((Category) dbo.InitBean(Category.class));
+				afp.setCategory(new Category());
 
 				// 二级分类指标
-				afp.setType((Type) dbo.InitBean(Type.class));
+				afp.setType(new Type());
 
 				// 指标标准表单
-				afp.setIndexdetail((Indexdetail) dbo.InitBean(Indexdetail.class));
+				afp.setIndexdetail(new Indexdetail());
 				if (afp.getDepCurPage() == 0){
 					afp.setDepCurPage(1);
 					session.setAttribute("department", afp.getDepartment());
@@ -67,13 +65,13 @@ public class ReportServlet extends HttpServlet {
 				}
 			} else if ("1".equals(businessKey)){
 				// 部门
-				afp.setDepartment((Department) dbo.InitBean(Department.class));
+				afp.setDepartment(new Department());
 
 				// 二级分类指标
-				afp.setType((Type) dbo.InitBean(Type.class));
+				afp.setType(new Type());
 
 				// 指标标准表单
-				afp.setIndexdetail((Indexdetail) dbo.InitBean(Indexdetail.class));
+				afp.setIndexdetail(new Indexdetail());
 				if (afp.getCatCurPage() == 0){
 					afp.setCatCurPage(1);
 					session.setAttribute("category", afp.getCategory());
@@ -82,13 +80,13 @@ public class ReportServlet extends HttpServlet {
 				}
 			} else if ("2".equals(businessKey)){
 				// 部门
-				afp.setDepartment((Department) dbo.InitBean(Department.class));
+				afp.setDepartment(new Department());
 				
 				// 一级分类指标
-				afp.setCategory((Category) dbo.InitBean(Category.class));
+				afp.setCategory(new Category());
 				
 				// 指标标准表单
-				afp.setIndexdetail((Indexdetail) dbo.InitBean(Indexdetail.class));
+				afp.setIndexdetail(new Indexdetail());
 				if (afp.getTypeCurPage() == 0){
 					afp.setTypeCurPage(1);
 					session.setAttribute("type", afp.getType());
@@ -97,13 +95,13 @@ public class ReportServlet extends HttpServlet {
 				}
 			} else if ("3".equals(businessKey)){
 				// 部门
-				afp.setDepartment((Department) dbo.InitBean(Department.class));
+				afp.setDepartment(new Department());
 
 				// 一级分类指标
-				afp.setCategory((Category) dbo.InitBean(Category.class));
+				afp.setCategory(new Category());
 
 				// 二级分类指标
-				afp.setType((Type) dbo.InitBean(Type.class));
+				afp.setType(new Type());
 				if (afp.getIdCurPage() == 0){
 					afp.setIdCurPage(1);
 					session.setAttribute("indexdetail", afp.getIndexdetail());
@@ -126,16 +124,16 @@ public class ReportServlet extends HttpServlet {
 			afp.setMessage("");
 			
 			// 部门
-			afp.setDepartment((Department) dbo.InitBean(Department.class));
+			afp.setDepartment(new Department());
 
 			// 一级分类指标
-			afp.setCategory((Category) dbo.InitBean(Category.class));
+			afp.setCategory(new Category());
 
 			// 二级分类指标
-			afp.setType((Type) dbo.InitBean(Type.class));
+			afp.setType(new Type());
 
 			// 指标标准表单
-			afp.setIndexdetail((Indexdetail) dbo.InitBean(Indexdetail.class));
+			afp.setIndexdetail(new Indexdetail());
 			request.setAttribute("CategoryAdd", afp);
 			request.getRequestDispatcher("/jsp/yxCategoryEdit.jsp").forward(request, response);
 		}
