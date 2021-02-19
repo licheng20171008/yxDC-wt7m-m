@@ -3,6 +3,7 @@ package com.yx.mapper;
 import com.yx.domain.Type;
 import java.util.List;
 import org.apache.ibatis.annotations.Param;
+import org.apache.ibatis.annotations.Select;
 
 public interface TypeMapper {
     int countByExample(TypeExample example);
@@ -26,4 +27,7 @@ public interface TypeMapper {
     int updateByPrimaryKeySelective(Type record);
 
     int updateByPrimaryKey(Type record);
+    
+    @Select(" select * from type a where exists (select 1 from category b where a.category_type = b.id and b.categoryName=#{categoryname}) and a.typeName = #{typename}")
+    List<Type> selectByName(@Param("categoryname")String categoryname, @Param("typename")String typename);
 }
