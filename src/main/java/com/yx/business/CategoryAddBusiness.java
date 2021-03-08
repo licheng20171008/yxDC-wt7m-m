@@ -88,6 +88,7 @@ public class CategoryAddBusiness extends DBConnect {
 				}
 			}
 		}
+		ss.close();
 		return message;
 	}
 }

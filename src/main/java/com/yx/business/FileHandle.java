@@ -62,6 +62,7 @@ public class FileHandle extends DBConnect{
 				message = checkData(message, dep, index, departmentmapper.countByExample(departmentexample), "部门");
 			}
 		}
+		ss.close();
 		return message;
 	}
 
@@ -94,6 +95,7 @@ public class FileHandle extends DBConnect{
 			indexdetailmapper.insert(id);
 			index++;
 		}
+		ss.close();
 		return "数据插入成功！！";
 	}
 }

@@ -45,6 +45,7 @@ public class CategoryAddInit extends DBConnect {
 			typeList.add(resulttList.get(i));
 		}
 		categoryadd.setTypeList(typeList);
+		ss.close();
 		return categoryadd;
 	}
 }

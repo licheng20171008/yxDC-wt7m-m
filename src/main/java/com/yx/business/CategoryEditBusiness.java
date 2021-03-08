@@ -285,6 +285,7 @@ public class CategoryEditBusiness extends DBConnect{
 			indexdetailexample.setLimitClause((ca.getIdCurPage() - 1)*20 + ", " + ca.getIdCurPage()*20);
 			ca.setIdList(indexdetailmapper.selectByExample(indexdetailexample));
 		}
+		ss.close();
 		return ca;
 	}
 }
