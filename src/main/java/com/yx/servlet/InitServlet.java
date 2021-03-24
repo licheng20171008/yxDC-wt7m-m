@@ -7,6 +7,9 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import com.yx.business.CategoryAddBusiness;
 import com.yx.business.CategoryAddInit;
 import com.yx.domain.Category;
@@ -33,6 +36,12 @@ public class InitServlet extends HttpServlet {
 	@Override
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
+	    Logger logger = LoggerFactory.getLogger(InitServlet.class);
+	    logger.error("测试error");
+	    logger.info("测试info");
+	    logger.warn("测试warn");
+	    logger.debug("测试debug");
+	    logger.trace("测试trace");
 		request.setCharacterEncoding("UTF-8");
 		CategoryAddBusiness cab = new CategoryAddBusiness();
 		String hiddenValue = request.getParameter("hiddenValue");

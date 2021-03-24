@@ -81,6 +81,7 @@
   <build>
     <finalName>yxDC-wt7m-m</finalName>
     <plugins>
+        <!-- tomcat7插件 -->
         <plugin>
             <groupId>org.apache.tomcat.maven</groupId>
             <artifactId>tomcat7-maven-plugin</artifactId>
