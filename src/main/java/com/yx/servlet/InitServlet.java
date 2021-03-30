@@ -36,12 +36,6 @@ public class InitServlet extends HttpServlet {
 	@Override
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-	    Logger logger = LoggerFactory.getLogger(InitServlet.class);
-	    logger.error("测试error");
-	    logger.info("测试info");
-	    logger.warn("测试warn");
-	    logger.debug("测试debug");
-	    logger.trace("测试trace");
 		request.setCharacterEncoding("UTF-8");
 		CategoryAddBusiness cab = new CategoryAddBusiness();
 		String hiddenValue = request.getParameter("hiddenValue");

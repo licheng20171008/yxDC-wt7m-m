@@ -1,0 +1,24 @@
+2021-03-30 11:03:08.900|ERROR|com.yx.servlet.InitServlet|http-bio-8888-exec-6|doPost|40|测试error
+2021-03-30 11:03:08.916|INFO|com.yx.servlet.InitServlet|http-bio-8888-exec-6|doPost|41|测试info
+2021-03-30 11:03:08.916|WARN|com.yx.servlet.InitServlet|http-bio-8888-exec-6|doPost|42|测试warn
+2021-03-30 11:03:08.916|DEBUG|com.yx.servlet.InitServlet|http-bio-8888-exec-6|doPost|43|测试debug
+2021-03-30 11:04:21.921|ERROR|com.yx.servlet.InitServlet|http-bio-8888-exec-8|doPost|40|测试error
+2021-03-30 11:04:21.923|INFO|com.yx.servlet.InitServlet|http-bio-8888-exec-8|doPost|41|测试info
+2021-03-30 11:04:21.924|WARN|com.yx.servlet.InitServlet|http-bio-8888-exec-8|doPost|42|测试warn
+2021-03-30 11:04:21.924|DEBUG|com.yx.servlet.InitServlet|http-bio-8888-exec-8|doPost|43|测试debug
+2021-03-30 11:04:22.399|DEBUG|org.apache.ibatis.logging.jdbc.BaseJdbcLogger|http-bio-8888-exec-8|debug|142|==>  Preparing: select id, categoryName, abateTime from category WHERE ( abateTime is null ) 
+2021-03-30 11:04:22.433|DEBUG|org.apache.ibatis.logging.jdbc.BaseJdbcLogger|http-bio-8888-exec-8|debug|142|==> Parameters: 
+2021-03-30 11:04:22.518|DEBUG|org.apache.ibatis.logging.jdbc.BaseJdbcLogger|http-bio-8888-exec-8|debug|142|<==      Total: 2
+2021-03-30 11:04:22.523|DEBUG|org.apache.ibatis.logging.jdbc.BaseJdbcLogger|http-bio-8888-exec-8|debug|142|==>  Preparing: select id, typeName, category_type, abateTime from type WHERE ( abateTime is null ) 
+2021-03-30 11:04:22.524|DEBUG|org.apache.ibatis.logging.jdbc.BaseJdbcLogger|http-bio-8888-exec-8|debug|142|==> Parameters: 
+2021-03-30 11:04:22.672|DEBUG|org.apache.ibatis.logging.jdbc.BaseJdbcLogger|http-bio-8888-exec-8|debug|142|<==      Total: 6
+2021-03-30 11:06:05.002|ERROR|com.yx.servlet.InitServlet|http-bio-8888-exec-5|doPost|40|测试error
+2021-03-30 11:06:05.003|INFO|com.yx.servlet.InitServlet|http-bio-8888-exec-5|doPost|41|测试info
+2021-03-30 11:06:05.003|WARN|com.yx.servlet.InitServlet|http-bio-8888-exec-5|doPost|42|测试warn
+2021-03-30 11:06:05.003|DEBUG|com.yx.servlet.InitServlet|http-bio-8888-exec-5|doPost|43|测试debug
+2021-03-30 11:06:05.256|DEBUG|org.apache.ibatis.logging.jdbc.BaseJdbcLogger|http-bio-8888-exec-5|debug|142|==>  Preparing: select id, categoryName, abateTime from category WHERE ( abateTime is null ) 
+2021-03-30 11:06:05.257|DEBUG|org.apache.ibatis.logging.jdbc.BaseJdbcLogger|http-bio-8888-exec-5|debug|142|==> Parameters: 
+2021-03-30 11:06:05.260|DEBUG|org.apache.ibatis.logging.jdbc.BaseJdbcLogger|http-bio-8888-exec-5|debug|142|<==      Total: 2
+2021-03-30 11:06:05.261|DEBUG|org.apache.ibatis.logging.jdbc.BaseJdbcLogger|http-bio-8888-exec-5|debug|142|==>  Preparing: select id, typeName, category_type, abateTime from type WHERE ( abateTime is null ) 
+2021-03-30 11:06:05.262|DEBUG|org.apache.ibatis.logging.jdbc.BaseJdbcLogger|http-bio-8888-exec-5|debug|142|==> Parameters: 
+2021-03-30 11:06:05.267|DEBUG|org.apache.ibatis.logging.jdbc.BaseJdbcLogger|http-bio-8888-exec-5|debug|142|<==      Total: 6
